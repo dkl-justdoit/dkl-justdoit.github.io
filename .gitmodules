@@ -1,0 +1,9 @@
+[submodule "blogs/themes/hexo-theme-butterfly"]
+	path = blogs/themes/hexo-theme-butterfly
+	url = git@github.com:dkl-justdoit/hexo-theme-butterfly.git
+[submodule "blogs/themes/hexo-theme-fluid"]
+	path = blogs/themes/hexo-theme-fluid
+	url = git@github.com:dkl-justdoit/hexo-theme-fluid.git
+[submodule "blogs/themes/hexo-theme-volantis"]
+	path = blogs/themes/hexo-theme-volantis
+	url = git@github.com:dkl-justdoit/hexo-theme-volantis.git

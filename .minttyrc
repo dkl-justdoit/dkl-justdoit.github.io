@@ -1,0 +1,8 @@
+CursorColour=255,128,128
+CursorType=block
+FontHeight=14
+FontWeight=700
+FontIsBold=yes
+Columns=99
+Rows=20
+ScrollbackLines=100000
