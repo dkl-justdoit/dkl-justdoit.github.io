@@ -12,7 +12,7 @@
 ~h
 # Command Line History (newest to oldest):
 :wq
-|2,0,1668578739,,"wq"
+|2,0,1668816308,,"wq"
 
 # Search String History (newest to oldest):
 
@@ -25,14 +25,31 @@
 # Registers:
 
 # File marks:
-'0  1  0  ~/.gitconfig
-|4,48,1,0,1668578739,"~/.gitconfig"
+'0  14  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,48,14,0,1668816308,"~/blogs/source/_posts/CCIE笔记.md"
+'1  1  0  ~/.gitconfig
+|4,49,1,0,1668578739,"~/.gitconfig"
 
 # Jumplist (newest first):
+-'  14  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,14,0,1668816308,"~/blogs/source/_posts/CCIE笔记.md"
+-'  1  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,1,0,1668816246,"~/blogs/source/_posts/CCIE笔记.md"
+-'  1  0  ~/.gitconfig
+|4,39,1,0,1668578739,"~/.gitconfig"
 -'  1  0  ~/.gitconfig
 |4,39,1,0,1668578739,"~/.gitconfig"
 
 # History of marks within files (newest to oldest):
+
+> ~/blogs/source/_posts/CCIE笔记.md
+	*	1668816296	0
+	"	14	0
+	^	14	0
+	.	13	0
+	+	4	5
+	+	5	3
+	+	13	0
 
 > ~/.gitconfig
 	*	1668578736	0
