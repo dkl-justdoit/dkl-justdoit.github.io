@@ -140,3 +140,37 @@ subl .
 cd ..
 sub .
 subl .
+cd
+cd blog
+cd blogs/
+ls
+subl .
+cd ..
+subl .
+hexo new 'AAA'
+cd blogs/
+hexo new 'AAA'
+hexo clean
+hexo g
+hexo d
+hexo c
+hexo clean
+hexo g
+hexo d
+hexo clean
+hexo g
+hexo d
+hexo new 'CCIE笔记'
+vim source/_posts/CCIE笔记.md 
+hexo clean
+hexo g
+hexo d
+cd ..
+git add 
+git add .
+git commit -m '第一次提交blogs源码'
+git remote -v
+git push -u origin hexo-source-code
+git push -u origin hexo
+git push -u ssh_origin hexo
+git push -u origin hexo-source-code
