@@ -174,3 +174,33 @@ git push -u origin hexo-source-code
 git push -u origin hexo
 git push -u ssh_origin hexo
 git push -u origin hexo-source-code
+cd
+git status
+pwd
+git add .
+git commit -m '第一次提交源码'
+git
+git push -u ssh_origin hexo-source
+git branch -v
+git branch hexo-source
+git checkout hexo-source 
+git add .
+git commit -m 'diyici tijiao'
+git push -u ssh_origin hexo source
+git push -u ssh_origin hexo-source 
+git branch 
+git branch -a
+pwd
+touch ccccccccc
+git add ..
+git add .
+git commit -m '提交cccccc'
+git push ssh_origin hexo-source
+git push ssh_origin hexo-source
+cd blogs/
+git branch 
+hexo new 'HCIE学习笔记'
+vim source/_posts/HCIE学习笔记.md 
+hexo clean
+hexo g
+hexo d
