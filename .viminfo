@@ -12,7 +12,9 @@
 ~h
 # Command Line History (newest to oldest):
 :wq
-|2,0,1668818004,,"wq"
+|2,0,1669557031,,"wq"
+:q!
+|2,0,1669557000,,"q!"
 
 # Search String History (newest to oldest):
 
@@ -25,22 +27,80 @@
 # Registers:
 
 # File marks:
-'0  11  15  ~/blogs/source/_posts/HCIE学习笔记.md
-|4,48,11,15,1668818004,"~/blogs/source/_posts/HCIE学习笔记.md"
-'1  14  0  ~/blogs/source/_posts/CCIE笔记.md
-|4,49,14,0,1668816308,"~/blogs/source/_posts/CCIE笔记.md"
-'2  1  0  ~/.gitconfig
-|4,50,1,0,1668578739,"~/.gitconfig"
+'0  7  19  ~/.gitconfig
+|4,48,7,19,1669557031,"~/.gitconfig"
+'1  6  5  ~/.gitconfig
+|4,49,6,5,1669557000,"~/.gitconfig"
+'2  6  5  ~/.gitconfig
+|4,50,6,5,1669557000,"~/.gitconfig"
+'3  11  15  ~/blogs/source/_posts/HCIE学习笔记.md
+|4,51,11,15,1668818004,"~/blogs/source/_posts/HCIE学习笔记.md"
+'4  14  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,52,14,0,1668816308,"~/blogs/source/_posts/CCIE笔记.md"
+'5  1  0  ~/.gitconfig
+|4,53,1,0,1668578739,"~/.gitconfig"
+'6  1  0  ~/.gitconfig
+|4,54,1,0,1668578739,"~/.gitconfig"
+'7  1  0  ~/.gitconfig
+|4,55,1,0,1668578739,"~/.gitconfig"
+'8  1  0  ~/.gitconfig
+|4,56,1,0,1668578739,"~/.gitconfig"
 
 # Jumplist (newest first):
+-'  7  19  ~/.gitconfig
+|4,39,7,19,1669557031,"~/.gitconfig"
+-'  6  5  ~/.gitconfig
+|4,39,6,5,1669557001,"~/.gitconfig"
+-'  6  5  ~/.gitconfig
+|4,39,6,5,1669557000,"~/.gitconfig"
+-'  1  0  ~/.gitconfig
+|4,39,1,0,1669556968,"~/.gitconfig"
+-'  1  0  ~/.gitconfig
+|4,39,1,0,1669556968,"~/.gitconfig"
 -'  11  15  ~/blogs/source/_posts/HCIE学习笔记.md
 |4,39,11,15,1668818004,"~/blogs/source/_posts/HCIE学习笔记.md"
+-'  11  15  ~/blogs/source/_posts/HCIE学习笔记.md
+|4,39,11,15,1668818004,"~/blogs/source/_posts/HCIE学习笔记.md"
+-'  11  15  ~/blogs/source/_posts/HCIE学习笔记.md
+|4,39,11,15,1668818004,"~/blogs/source/_posts/HCIE学习笔记.md"
+-'  11  15  ~/blogs/source/_posts/HCIE学习笔记.md
+|4,39,11,15,1668818004,"~/blogs/source/_posts/HCIE学习笔记.md"
+-'  1  0  ~/blogs/source/_posts/HCIE学习笔记.md
+|4,39,1,0,1668817966,"~/blogs/source/_posts/HCIE学习笔记.md"
+-'  1  0  ~/blogs/source/_posts/HCIE学习笔记.md
+|4,39,1,0,1668817966,"~/blogs/source/_posts/HCIE学习笔记.md"
+-'  1  0  ~/blogs/source/_posts/HCIE学习笔记.md
+|4,39,1,0,1668817966,"~/blogs/source/_posts/HCIE学习笔记.md"
 -'  1  0  ~/blogs/source/_posts/HCIE学习笔记.md
 |4,39,1,0,1668817966,"~/blogs/source/_posts/HCIE学习笔记.md"
 -'  14  0  ~/blogs/source/_posts/CCIE笔记.md
 |4,39,14,0,1668816308,"~/blogs/source/_posts/CCIE笔记.md"
 -'  14  0  ~/blogs/source/_posts/CCIE笔记.md
 |4,39,14,0,1668816308,"~/blogs/source/_posts/CCIE笔记.md"
+-'  14  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,14,0,1668816308,"~/blogs/source/_posts/CCIE笔记.md"
+-'  14  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,14,0,1668816308,"~/blogs/source/_posts/CCIE笔记.md"
+-'  14  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,14,0,1668816308,"~/blogs/source/_posts/CCIE笔记.md"
+-'  14  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,14,0,1668816308,"~/blogs/source/_posts/CCIE笔记.md"
+-'  14  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,14,0,1668816308,"~/blogs/source/_posts/CCIE笔记.md"
+-'  14  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,14,0,1668816308,"~/blogs/source/_posts/CCIE笔记.md"
+-'  1  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,1,0,1668816246,"~/blogs/source/_posts/CCIE笔记.md"
+-'  1  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,1,0,1668816246,"~/blogs/source/_posts/CCIE笔记.md"
+-'  1  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,1,0,1668816246,"~/blogs/source/_posts/CCIE笔记.md"
+-'  1  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,1,0,1668816246,"~/blogs/source/_posts/CCIE笔记.md"
+-'  1  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,1,0,1668816246,"~/blogs/source/_posts/CCIE笔记.md"
+-'  1  0  ~/blogs/source/_posts/CCIE笔记.md
+|4,39,1,0,1668816246,"~/blogs/source/_posts/CCIE笔记.md"
 -'  1  0  ~/blogs/source/_posts/CCIE笔记.md
 |4,39,1,0,1668816246,"~/blogs/source/_posts/CCIE笔记.md"
 -'  1  0  ~/blogs/source/_posts/CCIE笔记.md
@@ -55,6 +115,18 @@
 |4,39,1,0,1668578739,"~/.gitconfig"
 
 # History of marks within files (newest to oldest):
+
+> ~/.gitconfig
+	*	1669557024	0
+	"	7	19
+	^	7	20
+	.	7	20
+	+	1	64
+	+	1	95
+	+	6	36
+	+	2	0
+	+	6	6
+	+	7	20
 
 > ~/blogs/source/_posts/HCIE学习笔记.md
 	*	1668818002	0
@@ -72,13 +144,3 @@
 	+	4	5
 	+	5	3
 	+	13	0
-
-> ~/.gitconfig
-	*	1668578736	0
-	"	1	0
-	^	1	0
-	.	2	0
-	+	1	64
-	+	1	95
-	+	7	30
-	+	2	0

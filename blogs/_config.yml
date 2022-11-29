@@ -13,7 +13,7 @@ timezone: 'Asia/shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://dkl-justdoit.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -107,9 +107,9 @@ ignore:
 #theme: landscape
 
 theme: hexo-theme-fluid
-#theme: hexo-theme-next
-#theme: hexo-theme-volantis
 #theme: hexo-theme-butterfly
+#theme: hexo-theme-volantis
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

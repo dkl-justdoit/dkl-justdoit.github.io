@@ -1,6 +1,6 @@
 ---
 title: tcpdump和wireshark工具(网络排障)
-date: 2022-11-18 16:52:50
+date: 2022-10-01 16:52:50
 tags:
 ---
 # tcpdump和wireshark工具(网络排障)
@@ -75,7 +75,7 @@ tcpdump [-adeflnNOpqStvx][-c<数据包数量>][-dd][-ddd][-F<表达文件>][-i<�
 
 ### tcpdump命令格式
 
-![](tcpdump和wireshark工具-网络排障/tcpdump格式.jpg)
+![image-20221001134526789.png](tcpdump和wireshark工具-网络排障/image-20221001134526789.png)
 
 ## tcpdump的常用选项参数
 

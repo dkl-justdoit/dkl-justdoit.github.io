@@ -4,4 +4,4 @@
 [credential]
   helper = store
 [core]
-	editor = sublime_text.exe -w|1
+	editor = Typora.exe
