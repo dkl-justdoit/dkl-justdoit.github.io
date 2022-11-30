@@ -1,0 +1,8 @@
+[core]
+	editor = Typora.exe
+[user]
+	name = dkl-justdoit
+	email = vaincourtship@gmail.com
+[credential]
+	helper = store
+
