@@ -103,3 +103,115 @@ hexo g
 hexo s
 git clone -b hexo-source git@github.com:dkl-justdoit/dkl-justdoit.github.io.git
 git clone -b hexo-source git@github.com:dkl-justdoit/dkl-justdoit.github.io.git
+cd
+pwd
+subl .
+hexo clean
+hexo g
+hexo d
+git remote -v
+git branch -v
+git branch hexo-source-second
+ll
+git branch hexo-source-second
+git branch hexo-source-second
+git status
+git add .
+git branch -v
+git branch hexo-source-second
+git commit -m '这是我博客的第二种结构'
+git branch hexo-source-second
+git branch -v
+git remote -v
+git checkout hexo-source-second 
+git add ..
+git add .
+git commit -m '这是我博客的第二种结构'
+git push -u ssh_origin hexo-source-second 
+cd
+pwd
+subl 。
+subl .
+hexo clean
+hexo g
+hexo d
+hexo clean
+hexo g
+hexo d
+hexo new 'ceshi'
+hexo clean
+hexo g
+hexo d
+npm root -g
+hexo init
+hexo init
+git clone
+git clone git@github.com:qixa/hexo-theme-fluid-mod.git
+subl .
+cd
+pwd
+ll
+cd
+owd
+pwd
+npm root -g
+hexo new 'VMware workstation pro 17安装教程'
+hexo clean
+subl .
+hexo clean
+hexo g
+hexo d
+ll
+ll source/_posts/
+hexo clean 
+hexo g
+hexo d
+cd
+pwd
+subl .
+hexo clean
+hexo g
+cd
+pwd
+hexo clean
+hexo g
+hexo d
+hexo clean
+hexo g
+hexo d
+hexo clean
+hexo g
+hexo d
+hexo new page "categories"
+hexo new page "tags"
+hexo clena
+hexo clean
+hexo g
+hexo d
+cd
+hexo new cesh
+hexo clean
+hexo g
+hexo s
+hexo clean
+hexo g
+hexo d
+cd
+hexo new 'VMware Workstation Pro各版本激活许可证'
+hexo new 'vmware 6 虚拟化 全系列 序列号'
+hexo new 'vmware 6 虚拟化 全系列 激活许可证'
+hexo clena
+hexo clean
+hexo g
+hexo d
+cd
+subl .
+hexo clean
+hexo g
+hexo d
+hexo clean
+cd 
+npm root -g
+hexo clean
+hexo g
+hexo d

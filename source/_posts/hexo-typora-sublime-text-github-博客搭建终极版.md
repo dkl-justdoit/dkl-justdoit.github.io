@@ -463,7 +463,7 @@ npm install hexo-renderer-pug hexo-renderer-stylus --save # 如果butterfly主�
 - 提交源码到hexo-source分支
 
 ```bash
-根目录下(BLOGS)
+根目录下(dkl-justdoit.github.io)
 git add .
 git commit -m '注释信息'
 git push -u ssh_origin hexo-source
