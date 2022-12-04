@@ -225,3 +225,58 @@ git commit -m '提交：VMware Workstation Pro各版本激活许可证'
 git push ssh_origin hexo-source-second 
 git remote 
 git branch 
+cd
+subl .
+hexo new 'PPPoE'
+hexo new 'DHCP'
+hexo new 'ARP与RARP'
+hexo new page 'remark'
+hexo clean
+hexo g
+hexo g
+hexo d
+git add .
+git commit -m '提交：网络笔记'
+git push ssh_origin hexo-source-second 
+subl .
+hexo
+hexo clean
+hexo g
+hexo d
+hexo clean
+hexo g
+hexo d
+hexo clean
+hexo g
+hexo d
+hexo clean
+hexo g
+hexo d
+hexo clean
+hexo g
+hexo
+hexo d
+hexo
+hexo clena
+hexo clean
+hexo g
+hexo d
+hexo clean
+hexo g
+hexo d
+hexo clean
+hexo g
+hexo d
+hexo clean
+hexo g
+hexo d
+hexo clean
+hexo g
+hexo dj
+hexo d
+hexo clean
+hexo g
+hexo d
+hexo clean
+hexo g
+hexo d

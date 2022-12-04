@@ -1,19 +1,17 @@
 ---
+layout: 
 title: {{ title }}
 date: {{ date }}
-author: dkl-justdoit
-img: /source/images/xxx.jpg
-top: true
-cover: true
-coverImg: /images/1.jpg
-password:
-toc: false
-mathjax: false
-summary: 
-categories: 
-  - Linux
-  - 网络
+updated: 
+comments: 
 tags:
   - 网络
   - Linux
+categories: 
+  - [Linux]
+  - [网络]
+excerpt: 
+banner_img: /assets/img/a.jpg
+index_img: /assets/img/a.jpg
+math: false
 ---
