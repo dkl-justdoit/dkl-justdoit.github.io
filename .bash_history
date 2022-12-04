@@ -215,3 +215,13 @@ npm root -g
 hexo clean
 hexo g
 hexo d
+hexo clean
+cd
+hexo clean
+hexo g
+hexo d
+git add .
+git commit -m '提交：VMware Workstation Pro各版本激活许可证'
+git push ssh_origin hexo-source-second 
+git remote 
+git branch 
