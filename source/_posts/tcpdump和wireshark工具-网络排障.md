@@ -1,5 +1,6 @@
 ---
 title: tcpdump和wireshark工具(网络排障)
+abbrlink: 42879
 date: 2022-10-01 16:52:50
 tags:
 ---

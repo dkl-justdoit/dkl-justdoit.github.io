@@ -1,5 +1,6 @@
 ---
 title: 如何通过hash来核对下载后的文件与官方给的文件是否相同
+abbrlink: 33380
 date: 2022-10-28 15:12:05
 categories:
 tags:

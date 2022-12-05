@@ -1,5 +1,6 @@
 ---
 title: VMware workstation pro 17安装教程
+abbrlink: 54642
 date: 2022-11-21 10:44:09
 tags:
 ---

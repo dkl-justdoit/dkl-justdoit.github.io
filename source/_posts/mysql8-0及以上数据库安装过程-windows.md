@@ -1,11 +1,12 @@
 ---
-title: mysql8.0及以上数据库安装过程[windows]
+title: 'mysql8.0及以上数据库安装过程[windows]'
+abbrlink: 9917
 date: 2022-10-29 12:16:18
 categories:
 tags:
 permalink:
-banner_img: 
-index_img: 
+banner_img:
+index_img:
 ---
 
 # mysql8.0及以上数据库安装过程[windows]

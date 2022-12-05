@@ -1,5 +1,6 @@
 ---
 title: git中修改默认编辑器为VSCode、Sublime Text或Typora
+abbrlink: 45329
 date: 2022-10-25 20:22:09
 categories:
 tags:

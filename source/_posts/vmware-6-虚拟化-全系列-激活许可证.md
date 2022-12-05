@@ -12,6 +12,7 @@ categories:
 tags:
   - 许可证
   - 虚拟化
+abbrlink: 54423
 date: 2022-07-03 10:59:03
 password:
 summary:

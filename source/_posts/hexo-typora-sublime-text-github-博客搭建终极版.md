@@ -1,5 +1,6 @@
 ---
 title: hexo + typora + sublime text + github 博客搭建终极版
+abbrlink: 9940
 date: 2022-11-26 21:25:38
 categories:
 tags:

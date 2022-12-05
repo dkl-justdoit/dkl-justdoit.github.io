@@ -280,3 +280,41 @@ hexo d
 hexo clean
 hexo g
 hexo d
+cd
+hexo new '修改Git的默认家目录'
+hexo clean
+hexo g
+git add .
+git commit -m '提交：测试文件'
+hexo clean
+hexo g
+git status
+git reset --hard HEAD^
+LL
+LL
+ll
+npm root -g
+npm install hexo-abbrlink --save
+hexo clean
+hexo g
+hexo s
+hexo clean
+hexo g
+hexo d
+typroa 。
+typora .
+hexo new '修改Git的默认家目录'
+hexo clean
+hexo g
+history 
+git reset --hard HEAD^
+hexo clean
+hexo g
+hexo d
+subl .
+git log
+git reflog
+git reset --hard b97e86e
+hexo clean
+hexo g
+hexo s

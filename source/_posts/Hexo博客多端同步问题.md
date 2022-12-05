@@ -1,5 +1,6 @@
 ---
 title: Hexo博客多端同步问题
+abbrlink: 7856
 date: 2022-11-21 19:36:25
 categories:
 tags:

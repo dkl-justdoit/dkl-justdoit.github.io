@@ -1,5 +1,6 @@
 ---
 title: hexo多主题共存(以fluid、volantis、butterfly为例)
+abbrlink: 38184
 date: 2022-10-11 19:17:38
 categories:
 tags:

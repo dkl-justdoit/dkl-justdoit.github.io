@@ -1,5 +1,6 @@
 ---
 title: GitHub网页版删除指定仓库指定分支
+abbrlink: 48307
 date: 2022-10-28 20:19:04
 categories:
 tags:

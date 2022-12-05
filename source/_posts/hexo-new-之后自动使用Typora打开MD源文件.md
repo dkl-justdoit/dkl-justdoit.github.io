@@ -1,5 +1,6 @@
 ---
 title: hexo new 之后自动使用Typora打开MD源文件
+abbrlink: 58242
 date: 2022-09-28 16:10:59
 categories:
 tags:
