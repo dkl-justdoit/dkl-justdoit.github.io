@@ -318,3 +318,74 @@ git reset --hard b97e86e
 hexo clean
 hexo g
 hexo s
+cd
+subl .
+npm root -g
+npm install hexo-abbrlink --save
+hexo clean
+hexo g
+hexo clean
+hexo g
+hexo s
+hexo d
+git add .
+git commit -m '提交：转换永久链接前的其他所有准备已完成'
+git push ssh_origin hexo-source-second 
+git status
+cd themes/
+ll
+cd hexo-theme-fluid/
+git add .
+git commit -m '提交：转换永久链接前的其他所有准备已完成'
+git remote -v
+git push ssh_origin fluid-second 
+cd ..
+git log
+hexo new '修改Git的默认家目录'
+hexo clean
+hexo g
+hexo clean
+hexo g
+hexo g
+hexo clean
+hexo g
+hexo clean
+hexo g
+hexo clean
+hexo g
+hexo s
+hexo s
+hexo d
+hexo clean
+hexo g
+clear
+hexo clean
+hexo g
+hexo d
+cd
+subl .
+hexo new 'VMware Workstation Pro各个版本激活许可证'
+hexo clean
+hexo g
+hexo clean
+hexo g
+hexo clean
+hexo g
+hexo clean
+hexo g
+clear
+hexo clean
+hexo g
+hexo clean
+hexo new 'ceshiyixia'
+hexo clean
+hexo g
+hexo clean
+hexo g
+clear
+hexo clean
+hexo g
+cd
+hexo clean
+hexo g
+hexo d

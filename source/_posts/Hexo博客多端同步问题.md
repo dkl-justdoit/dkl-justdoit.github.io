@@ -1,17 +1,25 @@
 ---
 title: Hexo博客多端同步问题
-abbrlink: 7856
-date: 2022-11-21 19:36:25
-categories:
+comment: twikoo
+hide: true
 tags:
-permalink:
+  - 博客同步
+categories:
+  - - 博客
+banner_img: /assets/img/banner/a.jpg
+index_img: /assets/img/common/a.jpg
+math: false
+abbrlink: 49fa2569
+date: 2022-10-21 19:36:25
+layout:
+updated:
 ---
 
 # HEXO 博客多端同步问题
 
 搭完博客，想在不同电脑上更新博客就会出现博客内容不同步的问题，而且到处拷贝文件费时费力，因此就把博客源码放到GitHub，通过Git工具进行多终端的同步。
 
-前提条件：1、首先完成git和node的安装已经环境搭建，具体可见`下载并安装git`和`nodejs安装与环境配置`。2、使用npm工具`全局安装hexo-cli`。
+前提条件：1、首先完成git和node的安装以及环境搭建。2、使用npm工具`全局安装hexo-cli`。
 
 ## 1. 通过 git 工具实现 HEXO 博客源文件同步
 
@@ -25,7 +33,7 @@ permalink:
 1. 先使用npm工具全局安装hexo-cli，最好使用cmd(管理员)执行该命令
 
  ```bash
- npm install hexo-cli -g  # 先使用npm工具全局安装hexo-cli，最好使用cmd(管理员)执行该命令
+npm install hexo-cli -g  # 先使用npm工具全局安装hexo-cli，最好使用cmd(管理员)执行该命令
  ```
 
 2. 使用Git clone命令进行博客源文件的同步，具体如下：

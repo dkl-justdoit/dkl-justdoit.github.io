@@ -1,10 +1,20 @@
 ---
 title: hexo多主题共存(以fluid、volantis、butterfly为例)
-abbrlink: 38184
-date: 2022-10-11 19:17:38
-categories:
+comment: twikoo
+hide: true
 tags:
-permalink:
+  - fluid
+  - volantis
+  - butterfly
+categories:
+  - - 博客
+banner_img: /assets/img/banner/a.jpg
+index_img: /assets/img/common/a.jpg
+math: false
+abbrlink: 9ca71dc6
+date: 2022-10-11 19:17:38
+layout:
+updated:
 ---
 
 # hexo多主题共存(以fluid、volantis、butterfly为例)

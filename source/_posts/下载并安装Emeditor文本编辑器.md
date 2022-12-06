@@ -1,10 +1,20 @@
 ---
 title: 下载并安装Emeditor文本编辑器
-abbrlink: 22559
-date: 2022-11-29 11:54:22
-categories:
+comment: twikoo
+hide: true
 tags:
-permalink:
+  - 工具
+  - Emeditor
+  - 文本编辑器
+categories:
+  - - 工具
+banner_img: /assets/img/banner/a.jpg
+index_img: /assets/img/common/a.jpg
+math: false
+abbrlink: dbaa3bd7
+date: 2022-11-29 11:54:22
+layout:
+updated:
 ---
 
 # 下载并安装Emeditor文本编辑器
@@ -47,4 +57,5 @@ permalink:
 
 ![输入注册码](下载并安装Emeditor文本编辑器/image-8451129114551.png)
 
-![激活成功](下载并安装Emeditor文本编辑器/image-1669694165860.png)
+![激活成功](下载并安装Emeditor文本编辑器/image-1679694165860.png)
+

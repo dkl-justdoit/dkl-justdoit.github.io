@@ -1,10 +1,19 @@
 ---
 title: Git中SSH常见错误处理
-abbrlink: 23532
-date: 2022-11-02 20:54:48
-categories:
+comment: twikoo
+hide: true
 tags:
-permalink:
+  - Git
+  - SSH
+categories:
+  - - 工具
+banner_img: /assets/img/banner/a.jpg
+index_img: /assets/img/common/a.jpg
+math: false
+abbrlink: 39d6ddf6
+date: 2022-11-02 20:54:48
+layout:
+updated:
 ---
 
 # git push ssh_origin hexo-source 报错：ERROR: we're doing an SSH key audit.的解决办法

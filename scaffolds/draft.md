@@ -10,7 +10,7 @@ date: {{ date }}
 # 最后更新时间
 updated: 
 # 评论插件
-comments: 
+comment: 'twikoo'
 # 是否隐藏文章
 hide: true
 # 标签

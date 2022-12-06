@@ -1,9 +1,24 @@
 ---
 title: tcpdump和wireshark工具(网络排障)
-abbrlink: 42879
-date: 2022-10-01 16:52:50
+comment: twikoo
+hide: true
 tags:
+  - 工具
+  - tcpdump
+  - wireshark
+categories:
+  - - 工具
+  - - 网络
+  - - Linux
+banner_img: /assets/img/banner/a.jpg
+index_img: /assets/img/common/a.jpg
+math: false
+abbrlink: 711414cc
+date: 2022-10-01 16:52:50
+layout:
+updated:
 ---
+
 # tcpdump和wireshark工具(网络排障)
 
 ## 工具使用及说明
@@ -736,60 +751,3 @@ not port 80 and http # 捕获除http以外的所有流量，同样如果http端�
 开启混杂模式后，我们就可以解析其他mac的数据包，因此，我们使用Wireshark时，通常都会开启混杂模式。
 
 点击菜单栏的「捕获」按钮，点击「选项」，勾选「在所有接口上使用混杂模式」。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

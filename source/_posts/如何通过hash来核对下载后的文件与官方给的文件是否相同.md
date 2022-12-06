@@ -1,10 +1,19 @@
 ---
 title: 如何通过hash来核对下载后的文件与官方给的文件是否相同
-abbrlink: 33380
-date: 2022-10-28 15:12:05
-categories:
+comment: twikoo
+hide: true
 tags:
-permalink:
+  - HASH校验
+  - 工具
+categories:
+  - - 工具
+banner_img: /assets/img/banner/a.jpg
+index_img: /assets/img/common/a.jpg
+math: false
+abbrlink: fb722cd5
+date: 2022-10-28 15:12:05
+layout:
+updated:
 ---
 
 # 如何通过hash来核对下载后的文件与官方给的文件是否相同

@@ -1,10 +1,18 @@
 ---
 title: GitHub网页版删除指定仓库指定分支
-abbrlink: 48307
-date: 2022-10-28 20:19:04
-categories:
+comment: twikoo
+hide: true
 tags:
-permalink:
+  - GitHub网页版
+categories:
+  - - 工具
+banner_img: /assets/img/banner/a.jpg
+index_img: /assets/img/common/a.jpg
+math: false
+abbrlink: 88cb5e96
+date: 2022-10-28 20:19:04
+layout:
+updated:
 ---
 
 # GitHub网页版删除指定仓库指定分支

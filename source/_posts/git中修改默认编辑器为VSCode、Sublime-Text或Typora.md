@@ -1,10 +1,21 @@
 ---
 title: git中修改默认编辑器为VSCode、Sublime Text或Typora
-abbrlink: 45329
-date: 2022-10-25 20:22:09
-categories:
+comment: twikoo
+hide: true
 tags:
-permalink:
+  - VSCode
+  - Sublime Text
+  - Typora
+categories:
+  - - 工具
+  - - 文本编辑器
+banner_img: /assets/img/banner/a.jpg
+index_img: /assets/img/common/a.jpg
+math: false
+abbrlink: fa6b5160
+date: 2022-10-25 20:22:09
+layout:
+updated:
 ---
 
 # git中修改默认编辑器

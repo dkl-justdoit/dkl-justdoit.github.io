@@ -1,12 +1,20 @@
 ---
 title: 'mysql8.0及以上数据库安装过程[windows]'
-abbrlink: 9917
-date: 2022-10-29 12:16:18
-categories:
+comment: twikoo
+hide: true
 tags:
-permalink:
-banner_img:
-index_img:
+  - 工具
+  - MySQL
+categories:
+  - - 工具
+  - - 数据库
+banner_img: /assets/img/banner/a.jpg
+index_img: /assets/img/common/a.jpg
+math: false
+abbrlink: 8006d41b
+date: 2022-10-15 12:16:18
+layout:
+updated:
 ---
 
 # mysql8.0及以上数据库安装过程[windows]
@@ -94,4 +102,3 @@ default-character-set=utf8
   mysql -u root -p #验证账户，回车后输入前面修改的root密码即可，然后回车看到welcome欢迎信息即证明登录成功。
   # 通过以上操作，就得到了一组管理员账号和密码，管理员账号是root，对应的管理员密码是123456
   ```
-

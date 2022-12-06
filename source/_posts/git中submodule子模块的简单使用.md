@@ -1,10 +1,19 @@
 ---
 title: git中submodule子模块的简单使用
-abbrlink: 24723
-date: 2022-07-11 17:20:18
-categories:
+comment: twikoo
+hide: true
 tags:
-permalink:
+  - Git
+  - submodule
+categories:
+  - - 工具
+banner_img: /assets/img/banner/a.jpg
+index_img: /assets/img/common/a.jpg
+math: false
+abbrlink: c697b138
+date: 2022-07-11 17:20:18
+layout:
+updated:
 ---
 
 # git中submodule子模块的简单使用

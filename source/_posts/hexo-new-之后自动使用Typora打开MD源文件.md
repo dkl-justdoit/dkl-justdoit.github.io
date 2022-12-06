@@ -1,10 +1,19 @@
 ---
 title: hexo new 之后自动使用Typora打开MD源文件
-abbrlink: 58242
-date: 2022-09-28 16:10:59
-categories:
+comment: twikoo
+hide: true
 tags:
-permalink:
+  - js
+  - Typora
+categories:
+  - - 工具
+banner_img: /assets/img/banner/a.jpg
+index_img: /assets/img/common/a.jpg
+math: false
+abbrlink: 83eb35
+date: 2022-09-28 16:10:59
+layout:
+updated:
 ---
 
 # hexo new执行后自动使用Typora打开MD源文件

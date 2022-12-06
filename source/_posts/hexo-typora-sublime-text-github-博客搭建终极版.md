@@ -1,10 +1,24 @@
 ---
 title: hexo + typora + sublime text + github 博客搭建终极版
-abbrlink: 9940
-date: 2022-11-26 21:25:38
-categories:
+comment: twikoo
+hide: true
 tags:
-permalink:
+  - 博客搭建
+  - Git
+  - Nodejs
+  - VSCode
+  - Sublime Text
+  - Typora
+categories:
+  - - 博客
+  - - 工具
+banner_img: /assets/img/banner/a.jpg
+index_img: /assets/img/common/a.jpg
+math: false
+abbrlink: 5f3481
+date: 2022-10-26 21:25:38
+layout:
+updated:
 ---
 
 # hexo + typora + sublime text  + github 博客搭建终极版
@@ -66,7 +80,7 @@ permalink:
 
 9. 这里选择绑定的OpenSSH，点击next
 
-!](hexo + typora + sublime text + github 博客搭建终极版/image-20221126174724964.png)
+![](hexo-typora-sublime-text-github-博客搭建终极版/image-20221126174724964.png)
 
 10. 选择HTTPS传输后端，点击next
 
@@ -483,4 +497,4 @@ hexo d
 
 ### 6. 打完收工
 
-开始愉快地写博客吧！！！
+如果只想使用原主题，不需要继续进行主题的优化，那么就开始写博客吧！！！

@@ -1,10 +1,19 @@
 ---
 title: 修改Git的默认家目录
-abbrlink: 62335
-date: 2022-08-22 19:10:38
-categories:
+comment: twikoo
+hide: true
 tags:
-permalink:
+  - 工具
+  - Git
+categories:
+  - - 工具
+banner_img: /assets/img/banner/a.jpg
+index_img: /assets/img/common/a.jpg
+math: false
+abbrlink: 3c94ef76
+date: 2022-08-22 19:10:38
+layout:
+updated:
 ---
 
 # 修改Git的默认家目录
