@@ -1,15 +1,15 @@
 ---
 title: 'mysql8.0及以上数据库安装过程[windows]'
 comment: twikoo
-hide: true
+hide: false
 tags:
   - 工具
   - MySQL
 categories:
   - - 工具
   - - 数据库
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img: /assets/img/common/mysql.png
 math: false
 abbrlink: 8006d41b
 date: 2022-10-15 12:16:18

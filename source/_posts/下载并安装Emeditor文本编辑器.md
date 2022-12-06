@@ -1,15 +1,15 @@
 ---
 title: 下载并安装Emeditor文本编辑器
 comment: twikoo
-hide: true
+hide: false
 tags:
   - 工具
   - Emeditor
   - 文本编辑器
 categories:
   - - 工具
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img:
 math: false
 abbrlink: dbaa3bd7
 date: 2022-11-29 11:54:22

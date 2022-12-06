@@ -1,14 +1,14 @@
 ---
 title: hexo new 之后自动使用Typora打开MD源文件
 comment: twikoo
-hide: true
+hide: false
 tags:
   - js
   - Typora
 categories:
   - - 工具
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img:
 math: false
 abbrlink: 83eb35
 date: 2022-09-28 16:10:59

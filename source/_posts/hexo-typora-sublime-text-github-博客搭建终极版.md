@@ -1,7 +1,7 @@
 ---
 title: hexo + typora + sublime text + github 博客搭建终极版
 comment: twikoo
-hide: true
+hide: false
 tags:
   - 博客搭建
   - Git
@@ -12,8 +12,8 @@ tags:
 categories:
   - - 博客
   - - 工具
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img:
 math: false
 abbrlink: 5f3481
 date: 2022-10-26 21:25:38

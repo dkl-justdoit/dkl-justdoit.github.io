@@ -1,13 +1,13 @@
 ---
 title: Git 远程删除分支后，本地 git branch -a 依然能看到的解决办法
 comment: twikoo
-hide: true
+hide: false
 tags:
   - Git
 categories:
   - - 工具
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img: /assets/img/common/git.png
 math: false
 abbrlink: dcbbdee8
 date: 2022-10-08 16:21:22

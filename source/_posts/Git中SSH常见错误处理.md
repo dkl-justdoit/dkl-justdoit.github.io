@@ -1,14 +1,14 @@
 ---
 title: Git中SSH常见错误处理
 comment: twikoo
-hide: true
+hide: false
 tags:
   - Git
   - SSH
 categories:
   - - 工具
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img: /assets/img/common/git.png
 math: false
 abbrlink: 39d6ddf6
 date: 2022-11-02 20:54:48

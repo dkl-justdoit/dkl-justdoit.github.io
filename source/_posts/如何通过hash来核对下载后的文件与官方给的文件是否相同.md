@@ -1,14 +1,14 @@
 ---
 title: 如何通过hash来核对下载后的文件与官方给的文件是否相同
 comment: twikoo
-hide: true
+hide: false
 tags:
   - HASH校验
   - 工具
 categories:
   - - 工具
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img: /assets/img/common/win11.png
 math: false
 abbrlink: fb722cd5
 date: 2022-10-28 15:12:05

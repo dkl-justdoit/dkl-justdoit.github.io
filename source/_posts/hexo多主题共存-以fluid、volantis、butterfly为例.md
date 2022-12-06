@@ -1,15 +1,15 @@
 ---
 title: hexo多主题共存(以fluid、volantis、butterfly为例)
 comment: twikoo
-hide: true
+hide: false
 tags:
   - fluid
   - volantis
   - butterfly
 categories:
   - - 博客
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img:
 math: false
 abbrlink: 9ca71dc6
 date: 2022-10-11 19:17:38

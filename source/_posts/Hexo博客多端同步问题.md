@@ -1,13 +1,13 @@
 ---
 title: Hexo博客多端同步问题
 comment: twikoo
-hide: true
+hide: false
 tags:
   - 博客同步
 categories:
   - - 博客
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img:
 math: false
 abbrlink: 49fa2569
 date: 2022-10-21 19:36:25

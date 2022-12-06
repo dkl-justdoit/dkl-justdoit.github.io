@@ -1,14 +1,14 @@
 ---
 title: VMware Workstation Pro各版本激活码
 comment: twikoo
-hide: true
+hide: false
 tags:
   - 工具
   - VMware Workstation Pro
 categories:
   - - 工具
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img:
 math: false
 abbrlink: c4e6dcce
 date: 2022-12-03 10:55:28

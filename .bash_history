@@ -389,3 +389,88 @@ cd
 hexo clean
 hexo g
 hexo d
+cd
+subl .
+ll
+hexo new '修改Git的默认家目录'
+hexo clean
+hexo g
+hexo new '下载并安装Emeditor文本编辑器'
+hexo new '如何通过hash来核对下载后的文件与官方给的文件是否相同'
+hexo new '当前版本：Windows 11 2022 更新| 版本 22H2'
+hexo new 'VMware Workstation Pro各版本激活码'
+hexo new 'VMware workstation pro 17安装教程'
+hexo new 'vmware 6 虚拟化 全系列 激活许可证'
+hexo new 'vmware 6 虚拟化 全系列 激活码'
+hexo new 'tcpdump和wireshark工具(网络排障)'
+hexo new 'mysql8.0及以上数据库安装过程[windows]'
+hexo new 'hexo多主题共存(以fluid、volantis、butterfly为例)'
+hexo new 'Hexo博客多端同步问题'
+hexo new 'hexo + typora + sublime text + github 博客搭建终极版'
+hexo new 'hexo new 之后自动使用Typora打开MD源文件'
+hexo new 'git中修改默认编辑器为VSCode、Sublime Text或Typora'
+hexo new 'git中submodule子模块的简单使用'
+hexo new 'Git中SSH常见错误处理'
+hexo new 'Git 远程删除分支后，本地 git branch -a 依然能看到的解决办法'
+hexo new 'GitHub网页版删除指定仓库指定分支'
+typora .
+hexo clean
+hexo g
+clear
+hexo clean
+hexo g
+hexo d
+git add .
+git commit -m '提交：添加永久链接插件并基本完成主题优化'
+history 
+git push ssh_origin hexo-source-second 
+git remote -v
+git branch hexo-source-third
+git branch -v
+git checkout hexo-source-third 
+git add .
+git commit -m '提交：添加永久链接插件及初步完成主题优化'
+git push -u ssh_origin hexo-source-third 
+git branch 
+git branch  -d hexo-source-second 
+git branch -v
+git branch -a
+git add .
+git status
+git commit -m '提交：继续主题优化'
+git push ssh_origin hexo-source-third 
+git branch -a
+git remote show ssh_origin 
+git remote prune ssh_origin
+git remote prune origin 
+git remote prune ssh_origin
+git branch -a
+cd
+hexo clean
+hexo g
+hexo d
+hexo s
+hexo clean
+hexo g
+hexo d
+cd
+subl .
+hexo clean
+hexo g
+hexo d
+hexo s
+typora
+typora .
+hexo clean
+hexo g
+hexo d
+typora .
+typora .
+hexo clean
+hexo g
+hexo d
+typora .
+hexo clean
+hexo g
+hexo d
+typora .

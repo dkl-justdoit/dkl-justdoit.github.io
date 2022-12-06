@@ -1,14 +1,14 @@
 ---
 title: 修改Git的默认家目录
 comment: twikoo
-hide: true
+hide: false
 tags:
   - 工具
   - Git
 categories:
   - - 工具
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img:
 math: false
 abbrlink: 3c94ef76
 date: 2022-08-22 19:10:38

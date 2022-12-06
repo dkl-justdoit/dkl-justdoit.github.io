@@ -1,13 +1,13 @@
 ---
 title: GitHub网页版删除指定仓库指定分支
 comment: twikoo
-hide: true
+hide: false
 tags:
   - GitHub网页版
 categories:
   - - 工具
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img:
 math: false
 abbrlink: 88cb5e96
 date: 2022-10-28 20:19:04

@@ -1,7 +1,7 @@
 ---
 title: tcpdump和wireshark工具(网络排障)
 comment: twikoo
-hide: true
+hide: false
 tags:
   - 工具
   - tcpdump
@@ -10,8 +10,8 @@ categories:
   - - 工具
   - - 网络
   - - Linux
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img:
 math: false
 abbrlink: 711414cc
 date: 2022-10-01 16:52:50

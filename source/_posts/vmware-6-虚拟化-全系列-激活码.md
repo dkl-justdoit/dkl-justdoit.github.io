@@ -1,15 +1,15 @@
 ---
 title: vmware 6 虚拟化 全系列 激活码
 comment: twikoo
-hide: true
+hide: false
 tags:
   - 工具
   - 激活码
   - 虚拟化
 categories:
   - - 工具
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img:
 math: false
 abbrlink: 989cb93b
 date: 2022-07-03 10:59:03

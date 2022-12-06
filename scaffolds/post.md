@@ -12,7 +12,7 @@ updated:
 # 评论插件
 comment: 'twikoo'
 # 是否隐藏文章
-hide: true
+hide: false
 # 标签
 tags:
   - 网络
@@ -24,9 +24,9 @@ categories:
 # 文章摘要
 excerpt: 
 # 页面顶部大图
-banner_img: /assets/img/banner/a.jpg
+banner_img: /assets/img/banner/xxx.jpg
 # 文章首页显示图片
-index_img: /assets/img/common/a.jpg
+index_img: /assets/img/common/xxx.jpg
 # 是否启用LaTeX
 math: false
 ---

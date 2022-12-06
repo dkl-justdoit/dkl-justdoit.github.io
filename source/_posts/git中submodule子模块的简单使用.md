@@ -1,14 +1,14 @@
 ---
 title: git中submodule子模块的简单使用
 comment: twikoo
-hide: true
+hide: false
 tags:
   - Git
   - submodule
 categories:
   - - 工具
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img: /assets/img/common/git.png
 math: false
 abbrlink: c697b138
 date: 2022-07-11 17:20:18

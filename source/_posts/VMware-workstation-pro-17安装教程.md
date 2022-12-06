@@ -1,14 +1,14 @@
 ---
 title: VMware workstation pro 17安装教程
 comment: twikoo
-hide: true
+hide: false
 tags:
   - 工具
   - VMware workstation pro 17
 categories:
   - - 工具
-banner_img: /assets/img/banner/a.jpg
-index_img: /assets/img/common/a.jpg
+banner_img:
+index_img:
 math: false
 abbrlink: 2a12cdd2
 date: 2022-11-21 10:44:09
