@@ -1,5 +1,4 @@
 npm root -g
-npm root -g
 git clone -b hexo-source git@github.com:dkl-justdoit/dkl-justdoit.github.io.git
 ll
 cd dkl-justdoit.github.io/
@@ -474,3 +473,28 @@ hexo clean
 hexo g
 hexo d
 typora .
+cd
+hexo new 'fluid主题优化记录'
+hexo new cccccc
+typora .
+hexo clena
+hexo clean
+hexo g
+hexo d
+typora .
+typora .
+hexo clean
+hexo g
+hexo d
+git add .
+git status
+git add .
+git commit -m '提交：添加评论插件前的所有准备均已做好'
+git push ssh_origin hexo-source-third 
+cd themes/hexo-theme-fluid/
+git status
+git add .
+git commit -m '提交：添加评论插件前的所有准备均已做好'
+git remote 
+git remote -v
+git push ssh_origin fluid-second 
