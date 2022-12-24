@@ -124,3 +124,14 @@ deploy:
   #repository: https://github.com/dkl-justdoit/dkl-justdoit.github.io.git
   repository: git@github.com:dkl-justdoit/dkl-justdoit.github.io.git
   branch: main
+
+# 订阅RSS
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date

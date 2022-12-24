@@ -6,7 +6,7 @@ banner_img:
 comment: 'twikoo'
 ---
 
-## 介绍一下自己
+## 自我介绍
 
 我就是我，不一样的烟火！！
 
