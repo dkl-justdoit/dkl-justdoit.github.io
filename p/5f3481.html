@@ -1,0 +1,1104 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="dkl-justdoit">
+  <meta name="keywords" content="Notes for learning">
+  
+    <meta name="description" content="hexo + typora + sublime text  + github 博客搭建终极版使用说明hexo博客结构说明 现在使用的博客目录结构：BLOGS中有一个blogs子文件夹，blogs子文件夹是专门用来存放博客源文件用的。由于想要多端同步博客源文件，这里便将BLOGS文件夹下所有的博客源文件推送到dkl-justdoit.github.io远程仓库的hexo-source分支。博客发布时">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo + typora + sublime text + github 博客搭建终极版">
+<meta property="og:url" content="https://dkl-justdoit.github.io/p/5f3481.html">
+<meta property="og:site_name" content="大米袋儿">
+<meta property="og:description" content="hexo + typora + sublime text  + github 博客搭建终极版使用说明hexo博客结构说明 现在使用的博客目录结构：BLOGS中有一个blogs子文件夹，blogs子文件夹是专门用来存放博客源文件用的。由于想要多端同步博客源文件，这里便将BLOGS文件夹下所有的博客源文件推送到dkl-justdoit.github.io远程仓库的hexo-source分支。博客发布时">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175618194.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221125213053792.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174552220.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174617041.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174628271.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174656214.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174704371.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174713773.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174724964.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174736379.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174750864.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174758662.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174808011.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174815664.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174824190.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174832894.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174842924.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126183836246.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175732987.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175827163.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175842018.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175849483.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175857584.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175903539.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175928166.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175937283.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175949773.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126185821392.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180021773.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180033108.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126190431393.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180046448.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180052499.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180058434.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180105446.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180123821.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180130123.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180137136.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180146309.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180153618.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180203343.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180243666.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126214338538.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126205746156.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126203245381.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126203746807.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126211945128.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126212340801.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126213734001.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221127112125750.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221127121759509.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221127181937572.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221127180716090.png">
+<meta property="article:published_time" content="2022-10-26T13:25:38.000Z">
+<meta property="article:modified_time" content="2024-02-01T14:19:09.680Z">
+<meta property="article:author" content="dkl-justdoit">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="VSCode">
+<meta property="article:tag" content="Sublime Text">
+<meta property="article:tag" content="Typora">
+<meta property="article:tag" content="博客搭建">
+<meta property="article:tag" content="Nodejs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dkl-justdoit.github.io/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175618194.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>hexo + typora + sublime text + github 博客搭建终极版 - 大米袋儿</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dkl-justdoit.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="大米袋儿" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>vaincourtship</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remark/">
+                <i class="iconfont icon-cliplist"></i>
+                留言板
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="hexo + typora + sublime text + github 博客搭建终极版"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-10-26 21:25" pubdate>
+          2022年10月26日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          11k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          91 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    
+    <a href="https://dkl-justdoit.github.io" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">hexo + typora + sublime text + github 博客搭建终极版</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="hexo-typora-sublime-text-github-博客搭建终极版"><a href="#hexo-typora-sublime-text-github-博客搭建终极版" class="headerlink" title="hexo + typora + sublime text  + github 博客搭建终极版"></a>hexo + typora + sublime text  + github 博客搭建终极版</h1><h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><h3 id="hexo博客结构说明"><a href="#hexo博客结构说明" class="headerlink" title="hexo博客结构说明"></a>hexo博客结构说明</h3><ul>
+<li>现在使用的博客目录结构：<br>BLOGS中有一个blogs子文件夹，blogs子文件夹是专门用来存放博客源文件用的。由于想要多端同步博客源文件，这里便将BLOGS文件夹下所有的博客源文件推送到<code>dkl-justdoit.github.io</code>远程仓库的<code>hexo-source</code>分支。博客发布时，可以在blogs文件夹中使用hexo三件套来进行新博客的发布，推送到<code>dkl-justdoit.github.io</code>远程仓库的<code>main</code>(默认)分支。</li>
+<li>以后可以使用的博客目录结构：<br>其实完全可以不用单独创建一个专门用来存储博客源文件的文件夹，可以直接放到根文件夹BLOGS下，只用一个BLOGS文件夹也是可以的，不会影响博客源文件的备份以及新博客的正常发布。</li>
+</ul>
+<p>其实，二者的区别就在于进行博客初始化时，在BLOGS中执行的是”<code>hexo init blogs</code>“还是”<code>hexo init</code>“，如果是前者，那么就会在BLOGS中默认创建一个blogs文件夹，用来存放博客源文件，同时还会生成一些其他必要的文件；如果是后者，就不会创建blogs文件夹，生成的那些必要文件会直接存放到BLOGS文件夹中。因此，关键点在于在<code>hexo init</code>初始化时，在BLOGS文件夹内是执行“<code>hexo init blogs</code>”还是“<code>hexo init</code>”，其他本质上没有区别。</p>
+<h3 id="关于多主题共存的说明"><a href="#关于多主题共存的说明" class="headerlink" title="关于多主题共存的说明"></a>关于多主题共存的说明</h3><ol>
+<li><p>多主题共存，以fluid为例，不是将主题推送到 <code>git@github.com:dkl-justdoit/dkl-justdoit.github.io.git</code> ，而是推送到 <code>git@github.com:dkl-justdoit/hexo-theme-fluid.git</code> 。因此，所有修改过后的主题是保存到对应主题仓库下的[主题名]分支(若以fluid为例，就是保存到 <code>git@github.com:dkl-justdoit/hexo-theme-fluid.git</code> 的fluid分支)。所以，针对多主题共存，需要在本地仓库的主题目录中新创建分支，然后再推送到远程库并关联追踪。</p>
+</li>
+<li><p>对于博客源文件，在博客根目录下，使用git推送到 <code>git@github.com:dkl-justdoit/dkl-justdoit.github.io.git</code> 的hexo-source分支，这样可以在其他电脑直接同步博客，不影响博客写作，也避免了冲突的发生。前提是每次写完博客推送到Github pages发布页后还要将博客源码推送到hexo-source分支。</p>
+</li>
+<li><p>对于展示出来的hexo博客的html&#x2F;css&#x2F;js文件则是推送到main分支。原因是因为hexo博客的站点根目录的配置文件中就已经定义了会将展示用的html&#x2F;css&#x2F;js文件推送到 <code>git@github.com:dkl-justdoit/dkl-justdoit.github.io.git</code> 的哪个分支。</p>
+</li>
+</ol>
+<h2 id="hexo-typora-sublime-text-github-博客具体搭建过程"><a href="#hexo-typora-sublime-text-github-博客具体搭建过程" class="headerlink" title="hexo + typora + sublime text + github 博客具体搭建过程"></a>hexo + typora + sublime text + github 博客具体搭建过程</h2><h3 id="1-下载安装Git"><a href="#1-下载安装Git" class="headerlink" title="1. 下载安装Git"></a>1. 下载安装Git</h3><ol>
+<li>官网下载地址：<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175618194.png" srcset="/img/loading.gif" lazyload alt="image-20221126175618194"></p>
+<ol start="2">
+<li>下载完成后，双击2.38.1版本安装包进行安装，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221125213053792.png" srcset="/img/loading.gif" lazyload alt="image-20221125213053792"></p>
+<ol start="3">
+<li>修改git的默认安装路径，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174552220.png" srcset="/img/loading.gif" lazyload alt="image-20221126174552220"></p>
+<ol start="4">
+<li>选择要安装的组件配置，点击next(由于git更新可能会影响后来安装的nodejs，故这里取消更新检查)</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174617041.png" srcset="/img/loading.gif" lazyload alt="image-20221126174617041"></p>
+<ol start="5">
+<li>选择开始菜单文件夹，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174628271.png" srcset="/img/loading.gif" lazyload alt="image-20221126174628271"></p>
+<ol start="6">
+<li>选择git默认使用的编辑器，测试后，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174656214.png" srcset="/img/loading.gif" lazyload alt="image-20221126174656214"></p>
+<ol start="7">
+<li>确定新存储仓库初始化分支的名称，这里让git决定，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174704371.png" srcset="/img/loading.gif" lazyload alt="image-20221126174704371"></p>
+<ol start="8">
+<li>调整path环境变量，这里选择第二项，避免了对其他环境的污染，可以在Git Bash和Windows命令提示符中使用git，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174713773.png" srcset="/img/loading.gif" lazyload alt="image-20221126174713773"></p>
+<ol start="9">
+<li>这里选择绑定的OpenSSH，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174724964.png" srcset="/img/loading.gif" lazyload></p>
+<ol start="10">
+<li>选择HTTPS传输后端，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174736379.png" srcset="/img/loading.gif" lazyload alt="image-20221126174736379"></p>
+<ol start="11">
+<li>配置行结束符，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174750864.png" srcset="/img/loading.gif" lazyload alt="image-20221126174750864"></p>
+<ol start="12">
+<li>配置终端模拟器，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174758662.png" srcset="/img/loading.gif" lazyload alt="image-20221126174758662"></p>
+<ol start="13">
+<li>选择Git上传的默认行为，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174808011.png" srcset="/img/loading.gif" lazyload alt="image-20221126174808011"></p>
+<ol start="14">
+<li>选择Git凭证管理器，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174815664.png" srcset="/img/loading.gif" lazyload alt="image-20221126174815664"></p>
+<ol start="15">
+<li>选择额外选项配置，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174824190.png" srcset="/img/loading.gif" lazyload alt="image-20221126174824190"></p>
+<ol start="16">
+<li>实验选项配置，不要勾选，因为有bug，所以这里默认都不勾选，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174832894.png" srcset="/img/loading.gif" lazyload alt="image-20221126174832894"></p>
+<ol start="17">
+<li>取消勾选，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126174842924.png" srcset="/img/loading.gif" lazyload alt="image-20221126174842924"></p>
+<h3 id="2-下载安装TortoiseGit"><a href="#2-下载安装TortoiseGit" class="headerlink" title="2. 下载安装TortoiseGit"></a>2. 下载安装TortoiseGit</h3><ol>
+<li>官网下载地址：<a target="_blank" rel="noopener" href="https://tortoisegit.org/download/">https://tortoisegit.org/download/</a></li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126183836246.png" srcset="/img/loading.gif" lazyload alt="image-20221126183836246"></p>
+<ol start="2">
+<li>将TortoiseGit安装包和TortoiseGit中文语言包下载完成后，先双击TortoiseGit安装包，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175732987.png" srcset="/img/loading.gif" lazyload alt="image-20221126175732987"></p>
+<ol start="3">
+<li>点击next，SSH客户端选择git默认SSH客户端，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175827163.png" srcset="/img/loading.gif" lazyload alt="image-20221126175827163"></p>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175842018.png" srcset="/img/loading.gif" lazyload alt="image-20221126175842018"></p>
+<ol start="4">
+<li>修改TortoiseGit的默认安装路径，点击next，然后点击install即可</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175849483.png" srcset="/img/loading.gif" lazyload alt="image-20221126175849483"></p>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175857584.png" srcset="/img/loading.gif" lazyload alt="image-20221126175857584"></p>
+<ol start="5">
+<li>取消勾选”Run first start wizard”，点击finish即可</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175903539.png" srcset="/img/loading.gif" lazyload alt="image-20221126175903539"></p>
+<ol start="6">
+<li>双击tortoiseGit语言安装包，点击下一步，勾选”Configure TortoiseGit to use this language”后，点击完成</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175928166.png" srcset="/img/loading.gif" lazyload alt="image-20221126175928166"></p>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175937283.png" srcset="/img/loading.gif" lazyload alt="image-20221126175937283"></p>
+<ol start="7">
+<li>右键单击，依次选择”tortoisegit”–&gt;”设置”，取消每周自动检查新版本，然后应用，点击确定</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126175949773.png" srcset="/img/loading.gif" lazyload alt="image-20221126175949773"></p>
+<h3 id="3-下载安装nodejs，nodejs环境配置与hexo插件安装"><a href="#3-下载安装nodejs，nodejs环境配置与hexo插件安装" class="headerlink" title="3. 下载安装nodejs，nodejs环境配置与hexo插件安装"></a>3. 下载安装nodejs，nodejs环境配置与hexo插件安装</h3><p>在安装nodejs(版本18.12.1)时要注意权限问题，nodejs在安装后新建文件或文件夹时都需要管理员权限，为了避免npm全局包安装失败，给nodejs的程序安装目录提升权限即可(给everyone或当前登录用户添加完全控制权限即可)。</p>
+<ol>
+<li>官网下载地址：<a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a></li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126185821392.png" srcset="/img/loading.gif" lazyload alt="image-20221126185821392"></p>
+<ol start="2">
+<li>双击nodejs安装包，点击next，然后勾选同意协议，点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180021773.png" srcset="/img/loading.gif" lazyload alt="image-20221126180021773"></p>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180033108.png" srcset="/img/loading.gif" lazyload alt="image-20221126180033108"></p>
+<ol start="3">
+<li>更改nodejs的默认安装路径，点击next，然后再次点击next</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126190431393.png" srcset="/img/loading.gif" lazyload alt="image-20221126190431393"></p>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180046448.png" srcset="/img/loading.gif" lazyload alt="image-20221126180046448"></p>
+<ol start="4">
+<li>保持默认即可，不用勾选，点击next，然后点击install，安装完成后点击finish</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180052499.png" srcset="/img/loading.gif" lazyload alt="image-20221126180052499"></p>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180058434.png" srcset="/img/loading.gif" lazyload alt="image-20221126180058434"></p>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180105446.png" srcset="/img/loading.gif" lazyload alt="image-20221126180105446"></p>
+<ol start="5">
+<li>依次查看node与npm的安装版本以及npm全局安装默认文件夹</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180123821.png" srcset="/img/loading.gif" lazyload alt="image-20221126180123821"></p>
+<ol start="6">
+<li>nodejs安装完成后，检查权限，发现权限不够，需要提升权限，以everyone用户组为例，指定完全控制权限</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180130123.png" srcset="/img/loading.gif" lazyload alt="image-20221126180130123"></p>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180137136.png" srcset="/img/loading.gif" lazyload alt="image-20221126180137136"></p>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180146309.png" srcset="/img/loading.gif" lazyload alt="image-20221126180146309"></p>
+<ol start="7">
+<li>给everyone用户组指定完全控制权限后，创建文件或文件夹无需管理员权限也能成功</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180153618.png" srcset="/img/loading.gif" lazyload alt="image-20221126180153618"></p>
+<ol start="8">
+<li>在nodejs默认安装目录下新创建两个文件夹，<code>node_global</code>和<code>node_cache</code>，一个用来存放npm的全局安装包，一个用来存放nodejs安装npm包时产生的缓存</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180203343.png" srcset="/img/loading.gif" lazyload alt="image-20221126180203343"></p>
+<ol start="9">
+<li>以管理员身份打开Windows命令提示符cmd，然后执行如下两条命令，设置完成后通过<code>npm root -g</code>来查看npm全局安装包的默认安装位置是否设置成功，然后全局安装hexo相关插件(<code>npm install -g hexo-cli</code> 和<code>npm install -g npm</code>)，这里目前只需要全局安装<code>hexo-cli</code>即可</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm config <span class="hljs-built_in">set</span> prefix <span class="hljs-string">&quot;E:\Program Files\nodejs\node_global&quot;</span><br>npm config <span class="hljs-built_in">set</span> cache <span class="hljs-string">&quot;E:\Program Files\nodejs\node_cache&quot;</span><br>npm root -g <span class="hljs-comment"># 查看npm全局安装包的默认安装位置</span><br>npm install -g hexo-cli <span class="hljs-comment"># 使用npm全局安装hexo-cli</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126180243666.png" srcset="/img/loading.gif" lazyload alt="image-20221126180243666"></p>
+<ol start="10">
+<li>最后还要修改系统的环境变量，这里主要有两处需要修改：1、环境变量的用户变量；2、环境变量的系统变量</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">1、在用户环境变量下的path中，将默认的<span class="hljs-string">&quot;C:\Users\vain\AppData\Roaming\npm\&quot;修改为&quot;</span>E:\Program Files\nodejs\node_global<span class="hljs-string">&quot;，点击确定</span><br><span class="hljs-string">2、在系统变量中添加变量名为：NODE_PATH；变量值为：&quot;</span>E:\Program Files\nodejs\node_global\node_modules<span class="hljs-string">&quot;，点击确定</span><br><span class="hljs-string">3、在系统变量下的path中，将新创建的&quot;</span>NODE_PATH<span class="hljs-string">&quot;变量名前后加个%，变成&quot;</span>%NODE_PATH%<span class="hljs-string">&quot;添加到path中，点击确定</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="4-hexo博客的详细配置"><a href="#4-hexo博客的详细配置" class="headerlink" title="4. hexo博客的详细配置"></a>4. hexo博客的详细配置</h3><ol>
+<li>修改git默认家目录</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126214338538.png" srcset="/img/loading.gif" lazyload alt="image-20221126214338538"></p>
+<ol start="2">
+<li>修改git默认编辑器</li>
+</ol>
+<ul>
+<li>可以在git中通过命令行打开Sublime Text、VSCode、Typora，进行博客md源文件的编写，这里以Sublime Text为例</li>
+<li>若以sublime text为git的默认编辑器，首先应将sublime text.exe的安装目录放到环境变量中(可能需要重启)，其次执行命令：<code>git config --global core.editor &quot;sublime_text.exe -w&quot;</code>或<code>git config --global core.editor &quot;sublime_text.exe -w|1&quot;</code></li>
+<li>若以VSCode为git的默认编辑器，可直接执行命令：<code>git config --global --replace core.editor &quot;code --wait&quot;</code></li>
+<li>若以Typora为git的MD文件默认编辑器，可直接执行命令：<code>git config --global core.editor &quot;Typora.exe&quot;</code></li>
+</ul>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126205746156.png" srcset="/img/loading.gif" lazyload alt="image-20221126205746156"></p>
+<ol start="3">
+<li>创建dkl-justdoit.github.io站点文件夹，在站点文件夹中右键git bash，git初始化</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126203245381.png" srcset="/img/loading.gif" lazyload alt="image-20221126203245381"></p>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126203746807.png" srcset="/img/loading.gif" lazyload alt="image-20221126203746807"></p>
+<ol start="4">
+<li>配置git全局用户信息<code>user.name</code>和<code>user.email</code></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">配置用户名和邮箱<br>git config --global user.name <span class="hljs-string">&quot;dkl-justdoit&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;vaincourtship@gmail.com&quot;</span><br><span class="hljs-comment"># 配置用户名和邮箱后会在.git同级目录下生成一个.gitconfig文件</span><br></code></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>修改.gitconfig配置文件信息</li>
+</ol>
+<p>使用<code>git config --global --list</code>查看全局配置信息，其实就是<code>.gitconfig</code>中的信息；</p>
+<p><code>vim .gitconfig</code>，然后用下面的信息替换掉</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">[user]<br>	name = dkl-justdoit<br>	email = vaincourtship@gmail.com<br>[credential]<br>  helper = store<br>[core]<br>	editor = sublime_text.exe -w|1<br></code></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>给远程dkl-justdoit.github.io仓库指定别名，基于https协议和git协议</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote -v <span class="hljs-comment"># 查看所有远程仓库别名</span><br>git remote add origin https://github.com/dkl-justdoit/dkl-justdoit.github.io.git <span class="hljs-comment"># 给远程库添加别名，基于https协议</span><br>git remote add ssh_origin git@github.com:dkl-justdoit/dkl-justdoit.github.io.git <span class="hljs-comment"># 给远程库添加别名，基于git协议</span><br></code></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>将处理好的.ssh压缩包(.ssh密钥的生成这里不展开)解压到与.git同级目录中，执行<code>ssh -T git@github.com</code>，若返回信息为：<code>Hi dkl-justdoit! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code>，说明已经完成ssh处理</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126211945128.png" srcset="/img/loading.gif" lazyload alt="image-20221126211945128"></p>
+<ol start="8">
+<li>在站点文件夹dkl-justdoit.github.io中初始化博客站点，这里以hexo init blogs为例</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126212340801.png" srcset="/img/loading.gif" lazyload alt="image-20221126212340801"></p>
+<ol start="9">
+<li>在blogs中本地安装hexo-deployer-git和hexo-renderer-marked插件</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-deployer-git --save <span class="hljs-comment"># 推送博客html/css/js文件到github</span><br>npm install hexo-renderer-marked --save <span class="hljs-comment"># 解决hexo与typora图片显示问题</span><br><br>以下几个不是在这里使用<br>npm install -g hexo-cli <span class="hljs-comment"># 这个已经安装过了</span><br>npm install -g npm <span class="hljs-comment"># 这个更新不更新其实都可以的</span><br>npm install hexo-generator-feed --save <span class="hljs-comment"># 为博客添加RSS订阅链接</span><br>npm install hexo-admin --save <span class="hljs-comment"># Hexo博客引擎的管理用户界面插件，最初是作为本地编辑器设计的，在本地运行hexo使用hexo-admin编写文章</span><br>npm install hexo-renderer-pug hexo-renderer-stylus --save <span class="hljs-comment"># butterfly主题需要，不然无法正常渲染展示</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221126213734001.png" srcset="/img/loading.gif" lazyload alt="image-20221126213734001"></p>
+<ol start="10">
+<li>修改站点根目录blogs下的配置文件<code>_config.yml</code>，刚开始只需要关注两点：博客想要使用的主题以及要推送到github的哪个仓库的哪个分支，其余可以暂时不管，可以等后续处理</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">theme: hexo-theme-fluid <span class="hljs-comment"># 修改博客主题为fluid，我的博客的默认主题</span><br><span class="hljs-comment">#theme: hexo-theme-butterfly # butterfly主题可以使用但未启用</span><br><span class="hljs-comment">#theme: hexo-theme-volantis # volantis主题可以使用但未启用</span><br><br><span class="hljs-comment"># Deployment</span><br><span class="hljs-comment">## Docs: https://hexo.io/docs/one-command-deployment</span><br>deploy:<br>  <span class="hljs-built_in">type</span>: <span class="hljs-string">&#x27;git&#x27;</span> <span class="hljs-comment"># 类型为git</span><br>  <span class="hljs-comment">#repository: https://github.com/dkl-justdoit/dkl-justdoit.github.io.git # 使用https协议的url格式的仓库</span><br>  repository: git@github.com:dkl-justdoit/dkl-justdoit.github.io.git <span class="hljs-comment"># 使用git协议的url格式的仓库</span><br>  branch: main <span class="hljs-comment"># branch的值修改为main  </span><br></code></pre></td></tr></table></figure>
+
+<ol start="11">
+<li>在blogs中通过git submodule子模块添加多主题，这里以fluid、butterfly、volantis为例，通过fork原作者的主题仓库来同步主题的更新，然后将主题的自定义修改推送到自己fork的主题仓库的fluid、butterfly、volantis分支，这样以后如果想要更新，进行分支的合并后更新即可，而dkl-justdoit.github.io仓库，只是用来作为blogs的更新推送，里面都是html、css和js文件</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs bash">=============================================================================================================<br><span class="hljs-built_in">cd</span> blogs <span class="hljs-comment"># 切换到blogs目录下</span><br>git submodule add git@github.com:dkl-justdoit/hexo-theme-fluid.git themes/hexo-theme-fluid<br>git submodule update --init --recursive<br><span class="hljs-built_in">cd</span> themes/hexo-theme-fluid/<br><br>git branch -v <span class="hljs-comment"># 查看本地分支</span><br>git branch fluid    <span class="hljs-comment"># 创建本地fluid主题分支</span><br>git checkout fluid  <span class="hljs-comment"># 切换到fluid本地主题分支</span><br>git add .<br>git commit -m <span class="hljs-string">&#x27;剥离主题fluid&#x27;</span><br>git push -u origin fluid <span class="hljs-comment"># 推送本地fluid主题分支到dkl-justdoit/hexo-theme-fluid.git/fluid，并进行关联追踪</span><br><br><span class="hljs-built_in">cd</span> blogs <span class="hljs-comment"># 切换到blogs目录下</span><br>hexo clean<br>hexo g<br>hexo d<br>hexo s<br>=============================================================================================================<br><span class="hljs-built_in">cd</span> blogs <span class="hljs-comment"># 切换到blogs目录下</span><br>git submodule add git@github.com:dkl-justdoit/hexo-theme-butterfly.git themes/hexo-theme-butterfly<br>git submodule update --init --recursive<br><span class="hljs-built_in">cd</span> themes/hexo-theme-butterfly/<br><br>git branch -v <span class="hljs-comment"># 查看本地分支</span><br>git branch butterfly   <span class="hljs-comment"># 创建本地butterfly主题分支</span><br>git checkout butterfly  <span class="hljs-comment"># 切换到butterfly本地主题分支</span><br>git add .<br>git commit -m <span class="hljs-string">&#x27;剥离主题butterfly&#x27;</span><br>git push -u origin butterfly <span class="hljs-comment"># 推送本地butterfly主题分支到dkl-justdoit/hexo-theme-butterfly.git/butterfly，并进行关联追踪</span><br><br><span class="hljs-built_in">cd</span> blogs <span class="hljs-comment"># 切换到blogs目录下</span><br>hexo clean<br>hexo g<br>hexo d<br>hexo s<br>=============================================================================================================<br><span class="hljs-built_in">cd</span> blogs <span class="hljs-comment"># 切换到blogs目录下</span><br>git submodule add git@github.com:dkl-justdoit/hexo-theme-volantis.git themes/hexo-theme-volantis<br>git submodule update --init --recursive<br><span class="hljs-built_in">cd</span> themes/hexo-theme-volantis/<br><br>git branch -v <span class="hljs-comment"># 查看本地分支</span><br>git branch volantis   <span class="hljs-comment"># 创建本地volantis主题分支</span><br>git checkout volantis  <span class="hljs-comment"># 切换到volantis本地主题分支</span><br>git add .<br>git commit -m <span class="hljs-string">&#x27;剥离主题volantis&#x27;</span><br>git push -u origin volantis <span class="hljs-comment"># 推送本地volantis主题分支到dkl-justdoit/hexo-theme-volantis.git/volantis，并进行关联追踪</span><br><br><span class="hljs-built_in">cd</span> blogs <span class="hljs-comment"># 切换到blogs目录下</span><br>hexo clean<br>hexo g<br>hexo d<br>hexo s<br>==============================================================================================================<br>总结：这里以fluid、butterfly、volantis为例，通过fork原作者的主题仓库来同步主题的更新，然后将主题的自定义修改推送到自己fork的主题仓库的fluid、butterfly、volantis分支，这样以后如果想要更新，进行分支的合并后更新即可，而dkl-justdoit.github.io仓库，只是用来作为blogs的更新推送，里面都是html、css和js文件。<br></code></pre></td></tr></table></figure>
+
+<ol start="12">
+<li>修改站点根目录下配置文件中的主题相关字段，依次启用hexo-theme-fluid、hexo-theme-butterfly、hexo-theme-volantis进行测试，启用后记得保存_config.yml文件，然后依次执行hexo clean，hexo g，hexo d推送博客文件到github pages。其中，fluid和volantis可以正常展示，但是butterfly会报一个错误(可以解决)，需要注意</li>
+</ol>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221127112125750.png" srcset="/img/loading.gif" lazyload alt="image-20221127112125750"></p>
+<ul>
+<li>butterfly主题报错如下，需要在blogs目录下执行：<code>npm install hexo-renderer-pug hexo-renderer-stylus --save</code>，然后重新执行hexo clean，hexo g，hexo d推送博客文件到github pages即可</li>
+</ul>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221127121759509.png" srcset="/img/loading.gif" lazyload alt="image-20221127121759509"></p>
+<ol start="13">
+<li>基于hexo的博客，通过typora编辑MD文件，插入图片后typora本地是能正常展示的，但是发布到github pages上就展示不了了，主要的原因还是路径的问题，当然hexo官网也给了解决的办法，但是在本地使用很不方便，所以这里借助hexo-renderer-marked插件来解决这个问题，但也需要在hexo-renderer-marked插件中添加关于图片路径处理的代码，具体如下：</li>
+</ol>
+<ul>
+<li>首先引用 hexo-renderer-marked 包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-renderer-marked --save <span class="hljs-comment"># 在blogs目录中</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>然后修改_config.yml文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">post_asset_folder: <span class="hljs-literal">true</span><br>marked:<br>    prependRoot: <span class="hljs-literal">true</span><br>    postAsset: <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>开启了之后，图片资源就会自动解析成对应的图片路径。比如：“LINUX.jpg” 位于 “&#x2F;2022&#x2F;10&#x2F;11&#x2F;LINUX&#x2F;LINUX.jpg”</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">![](LINUX.jpg)` 将会转换成 `&lt;img src=<span class="hljs-string">&quot;/2022/10/11/LINUX/LINUX.jpg&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<p>这种方式，虽然能解决发布之后图片展示的问题，但是不能解决本地typora编辑的问题，例如，有如下的目录结构：</p>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221127181937572.png" srcset="/img/loading.gif" lazyload alt="image-20221127181937572"></p>
+<p>编辑<code>tcpdump和wireshark工具-网络排障.md</code>文件，如果写成：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">![image-20221001134526709](tcpdump和wireshark工具-网络排障/image-20221001134526709.jpg)<br></code></pre></td></tr></table></figure>
+
+<p>这种相对路径之后，能在typora中显示图片，但是在网页上就不能展示图片，如果改成下面这种：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">![image-20221001134526709](image-20221001134526709.jpg)<br></code></pre></td></tr></table></figure>
+
+<p>能在网页上显示图片，但是在typora中又不能显示，这个时候，我们就通过修改插件 hexo-renderer-marked 的代码，来兼容两方的需求，找到图片路径转换的代码：</p>
+<p><img src="/hexo-typora-sublime-text-github-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%BB%88%E6%9E%81%E7%89%88/image-20221127180716090.png" srcset="/img/loading.gif" lazyload alt="image-20221127180716090"></p>
+<ul>
+<li>在<code>node_modules/hexo-renderer-marked/lib/renderer.js</code>中查找<code>image(href, title, text)</code>；</li>
+<li>在 <code>const &#123; hexo, options &#125; = this; const &#123; relative_link &#125; = hexo.config; const &#123; lazyload, prependRoot, postPath &#125; = options;</code>前面插入如下代码：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//console.log(0,href);</span><br><span class="hljs-keyword">if</span>(href.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">&#x27;/&#x27;</span>)&gt;-<span class="hljs-number">1</span>)&#123;<br>      href = href.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;/&#x27;</span>)[<span class="hljs-number">1</span>];<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>其中红框中的代码就是新加的，这样我们在md文件中，路径写成：<code>tcpdump和wireshark工具-网络排障/image-20221001134526709.jpg</code>这样，就能同时在typora和网页上进行展示。</p>
+<ul>
+<li>使用hexo clean、hexo g、hexo s查看没有问题后再使用hexo d推送到GitHub上，至此hexo + typora + sublime text  + github 博客搭建已经初步完成，后期可以继续完善博客功能。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean<br>hexo g<br>hexo s<br><span class="hljs-comment"># 查看没有问题后再推送</span><br>hexo d<br><span class="hljs-comment"># 使用hexo-renderer-marked插件，typora在本地写文章插入图片后，可以在本地正常显示，同样发布到dkl-justdoit.github.io后也能在网页正常显示</span><br><span class="hljs-comment"># 推送完成后，可以打开url，测试功能是否成功实现</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="5-hexo博客搭建过程中的注意事项"><a href="#5-hexo博客搭建过程中的注意事项" class="headerlink" title="5. hexo博客搭建过程中的注意事项"></a>5. hexo博客搭建过程中的注意事项</h3><ol>
+<li>一定要先安装Git和TortoiseGit，再安装nodejs</li>
+</ol>
+<p>原因是如果先配置nodejs环境，再安装git会导致npm root -g的存储路径恢复成默认的位置，不便于管理。</p>
+<ol start="2">
+<li>在设置完nodejs的环境变量等配置后建议安装全局包前使用npm root -g确定是否是你想要存储的位置</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">最好在Windows命令提示符cmd中(管理员运行)执行<br>npm install -g hexo-cli <span class="hljs-comment"># hexo博客必须要安装的全局包</span><br>npm install -g npm <span class="hljs-comment"># 安装最新的npm包到自定义的全局包的位置</span><br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>除了必要的npm全局包外，安装局部npm包都需要在需要的、指定的目录下进行局部安装，且只能在该目录下使用，不能像全局包一样添加到环境变量中，可以到处使用</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-deployer-git --save <span class="hljs-comment"># 若有blogs目录，则在blogs目录下安装即可；若无，直接在dkl-justdoit.github.io目录下安装即可</span><br>npm install hexo-renderer-marked --save <span class="hljs-comment"># 同上</span><br>npm install hexo-generator-feed --save <span class="hljs-comment"># 同上</span><br>npm install hexo-admin --save <span class="hljs-comment"># 同上</span><br>npm install hexo-renderer-pug hexo-renderer-stylus --save <span class="hljs-comment"># 如果butterfly主题不能在网页显示，而是报错，这两个插件就需要安装</span><br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>将hexo博客的源文件推送到了dkl-justdoit.github.io仓库的hexo-source分支；将hexo博客生成的网页代码推送到了dkl-justdoit.github.io仓库的main分支(默认分支)</li>
+</ol>
+<ul>
+<li>提交源码到hexo-source分支</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">根目录下(dkl-justdoit.github.io)<br>git add .<br>git commit -m <span class="hljs-string">&#x27;注释信息&#x27;</span><br>git push -u ssh_origin hexo-source<br>提交源码到hexo-source分支<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>默认提交网页代码到main分支</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">根目录下(blogs)<br>hexo clean<br>hexo g<br>hexo d<br>默认提交网页代码到main分支<br></code></pre></td></tr></table></figure>
+
+<h3 id="6-打完收工"><a href="#6-打完收工" class="headerlink" title="6. 打完收工"></a>6. 打完收工</h3><p>如果只想使用原主题，不需要继续进行主题的优化，那么就开始写博客吧！！！</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%B7%A5%E5%85%B7/" class="category-chain-item">工具</a>
+  
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="category-chain-item">博客</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Git/">#Git</a>
+      
+        <a href="/tags/VSCode/">#VSCode</a>
+      
+        <a href="/tags/Sublime-Text/">#Sublime Text</a>
+      
+        <a href="/tags/Typora/">#Typora</a>
+      
+        <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">#博客搭建</a>
+      
+        <a href="/tags/Nodejs/">#Nodejs</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>hexo + typora + sublime text + github 博客搭建终极版</div>
+      <div>https://dkl-justdoit.github.io/p/5f3481.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>dkl-justdoit</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年10月26日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2024年2月1日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/p/fb722cd5.html" title="如何通过hash来核对下载后的文件与官方给的文件是否相同">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">如何通过hash来核对下载后的文件与官方给的文件是否相同</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/p/fa6b5160.html" title="git中修改默认编辑器为VSCode、Sublime Text或Typora">
+                        <span class="hidden-mobile">git中修改默认编辑器为VSCode、Sublime Text或Typora</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/assets/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/jingtaisidai.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/yinghua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxingxing.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/daxuehua.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

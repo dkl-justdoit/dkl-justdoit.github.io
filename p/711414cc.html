@@ -1,0 +1,1131 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="dkl-justdoit">
+  <meta name="keywords" content="Notes for learning">
+  
+    <meta name="description" content="tcpdump和wireshark工具(网络排障)工具使用及说明tcpdump工具的作用及使用方法 了解使用tcpdump的场景以及在这些场景中具体的使用方法  wireshark工具的作用及使用方法 了解使用wireshark的场景以及在这些场景中具体的使用方法   网络抓包说明为什么要抓包？  定位网络接口问题 分析其他app数据接口 学习网络协议，使用抓包工具分析网络数据更直观  抓包的原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tcpdump和wireshark工具(网络排障)">
+<meta property="og:url" content="https://dkl-justdoit.github.io/p/711414cc.html">
+<meta property="og:site_name" content="大米袋儿">
+<meta property="og:description" content="tcpdump和wireshark工具(网络排障)工具使用及说明tcpdump工具的作用及使用方法 了解使用tcpdump的场景以及在这些场景中具体的使用方法  wireshark工具的作用及使用方法 了解使用wireshark的场景以及在这些场景中具体的使用方法   网络抓包说明为什么要抓包？  定位网络接口问题 分析其他app数据接口 学习网络协议，使用抓包工具分析网络数据更直观  抓包的原理">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dkl-justdoit.github.io/tcpdump%E5%92%8Cwireshark%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%BB%9C%E6%8E%92%E9%9A%9C/image-20221001134526789.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/tcpdump%E5%92%8Cwireshark%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%BB%9C%E6%8E%92%E9%9A%9C/image-20221001133811867.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/tcpdump%E5%92%8Cwireshark%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%BB%9C%E6%8E%92%E9%9A%9C/image-20221001134200335.png">
+<meta property="og:image" content="https://dkl-justdoit.github.io/tcpdump%E5%92%8Cwireshark%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%BB%9C%E6%8E%92%E9%9A%9C/image-20221001134526756.png">
+<meta property="article:published_time" content="2022-10-01T08:52:50.000Z">
+<meta property="article:modified_time" content="2024-02-01T14:19:09.760Z">
+<meta property="article:author" content="dkl-justdoit">
+<meta property="article:tag" content="工具">
+<meta property="article:tag" content="tcpdump">
+<meta property="article:tag" content="wireshark">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dkl-justdoit.github.io/tcpdump%E5%92%8Cwireshark%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%BB%9C%E6%8E%92%E9%9A%9C/image-20221001134526789.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>tcpdump和wireshark工具(网络排障) - 大米袋儿</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"dkl-justdoit.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="大米袋儿" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>vaincourtship</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remark/">
+                <i class="iconfont icon-cliplist"></i>
+                留言板
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="tcpdump和wireshark工具(网络排障)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-10-01 16:52" pubdate>
+          2022年10月1日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          25k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          208 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+    
+    <a href="https://dkl-justdoit.github.io" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">tcpdump和wireshark工具(网络排障)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="tcpdump和wireshark工具-网络排障"><a href="#tcpdump和wireshark工具-网络排障" class="headerlink" title="tcpdump和wireshark工具(网络排障)"></a>tcpdump和wireshark工具(网络排障)</h1><h2 id="工具使用及说明"><a href="#工具使用及说明" class="headerlink" title="工具使用及说明"></a>工具使用及说明</h2><h3 id="tcpdump工具的作用及使用方法"><a href="#tcpdump工具的作用及使用方法" class="headerlink" title="tcpdump工具的作用及使用方法"></a>tcpdump工具的作用及使用方法</h3><ul>
+<li>了解使用tcpdump的场景以及在这些场景中具体的使用方法</li>
+</ul>
+<h3 id="wireshark工具的作用及使用方法"><a href="#wireshark工具的作用及使用方法" class="headerlink" title="wireshark工具的作用及使用方法"></a>wireshark工具的作用及使用方法</h3><ul>
+<li>了解使用wireshark的场景以及在这些场景中具体的使用方法</li>
+</ul>
+<hr>
+<h3 id="网络抓包说明"><a href="#网络抓包说明" class="headerlink" title="网络抓包说明"></a>网络抓包说明</h3><p><strong>为什么要抓包？</strong></p>
+<ul>
+<li>定位网络接口问题</li>
+<li>分析其他app数据接口</li>
+<li>学习网络协议，使用抓包工具分析网络数据更直观</li>
+</ul>
+<p><strong>抓包的原理是什么？</strong></p>
+<p>要实现对app的网络数据抓包，需要监控app与服务器交互之间的网络节点，监控其中任意一个网络节点(网卡)，获取所有经过网卡中的数据，对这些数据按照网络协议进行解析，这就是抓包的基本原理。</p>
+<p>但是中间网络节点，不受我们控制，所以基本无法实现抓包的，只能在客户端和服务端进行抓包。</p>
+<p><strong>混杂模式</strong></p>
+<p>混杂模式就是指网卡能接受所有通过它的数据流，不管什么格式，什么地址的，这样网口所有数据包都可以交给应用层处理。正常情况下，设备只接受发给自己或广播地址。其它的地址在底层被转发或丢弃，这样数据不会交给应用层处理。</p>
+<h3 id="抓包工具说明"><a href="#抓包工具说明" class="headerlink" title="抓包工具说明"></a>抓包工具说明</h3><ul>
+<li>fidder：Windows平台最受欢迎的抓包工具，免费易用</li>
+<li>charles：Mac平台最佳抓包工具，易用，收费但可一直试用</li>
+<li>wireshark：老牌抓包工具，跨平台，功能齐全、强大</li>
+<li>tcpdump：命令行程序，适用于手机系统和后台系统</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>抓包工具</th>
+<th>跨平台</th>
+<th>免费</th>
+<th>仅支持HTTP(S)</th>
+<th>是否易用</th>
+<th>界面操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fidder</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>charles</td>
+<td>是</td>
+<td>否(可试用)</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>wireshark</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>tcpdump</td>
+<td>是</td>
+<td>是</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+</tbody></table>
+<h2 id="tcpdump的简介"><a href="#tcpdump的简介" class="headerlink" title="tcpdump的简介"></a>tcpdump的简介</h2><p>tcpdump(dump the traffic on a network)命令是基于unix系统的命令行的数据报嗅探工具，可以抓取流动在网卡上的数据包。</p>
+<h3 id="查看本地网卡状态"><a href="#查看本地网卡状态" class="headerlink" title="查看本地网卡状态"></a>查看本地网卡状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># netstat -i</span><br>Kernel Interface table<br>Iface      MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg<br>eth0      1500       93      0      0 0           106      0      0      0 BMRU<br>lo       65536        8      0      0 0             8      0      0      0 LRU<br><span class="hljs-comment"># Iface：存在的网卡;</span><br><span class="hljs-comment"># MTU：最大传输单元;</span><br><span class="hljs-comment"># RX-OK RX-ERR RX-DRP RX-OVR：正确接收数据报的数量以及发生错误、流式、碰撞的总数;</span><br><span class="hljs-comment"># TX-OK TX-ERR TX-DRP TX-OVR：正确发送数据报的数量以及发生错误、流式、碰撞的总数。</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">tcpdump + 参数 + 表达式<br>tcpdump [-adeflnNOpqStvx][-c&lt;数据包数量&gt;][-<span class="hljs-built_in">dd</span>][-ddd][-F&lt;表达文件&gt;][-i&lt;网络接口&gt;][-r&lt;数据包文件&gt;]<br>		[-s&lt;数据包大小&gt;][-tt][-T&lt;数据包类型&gt;][-vv][-w&lt;数据包文件&gt;][表达式]<br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump命令格式"><a href="#tcpdump命令格式" class="headerlink" title="tcpdump命令格式"></a>tcpdump命令格式</h3><p><img src="/tcpdump%E5%92%8Cwireshark%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%BB%9C%E6%8E%92%E9%9A%9C/image-20221001134526789.png" srcset="/img/loading.gif" lazyload alt="image-20221001134526789.png"></p>
+<h2 id="tcpdump的常用选项参数"><a href="#tcpdump的常用选项参数" class="headerlink" title="tcpdump的常用选项参数"></a>tcpdump的常用选项参数</h2><ul>
+<li><p><strong>-h：查看tcpdump版本信息。</strong></p>
+</li>
+<li><p><strong>-D：列出可用于抓包的接口。将会列出接口的数值编号和接口名，它们都可以用于”-i”后。</strong></p>
+</li>
+<li><p><strong>-i：监听指定的网络接口，比如-i eth0，表示对eth0这个网卡进行抓包。</strong></p>
+</li>
+<li><p><strong>-e：在输出行打印出数据链路层的头部信息。</strong></p>
+</li>
+<li><p><strong>-c：抓取指定数目的数据包，比如-c 100表示我要抓取100个满足条件的包。</strong></p>
+</li>
+<li><p><strong>-n：不对具体ip地址进行域名解析，直接显示ip地址。</strong></p>
+</li>
+<li><p><strong>-nn：不对具体ip进行域名解析，并且端口号也不显示服务的名称，直接显示数字。</strong></p>
+</li>
+<li><p><strong>-x：把截取的数据包内容以16进制打印出来。</strong></p>
+</li>
+<li><p><strong>-X：把截取的数据包内容以ASCII文本形式打印出来。</strong></p>
+</li>
+<li><p><strong>-s：截取指定大小的数据包，s0表示完整的数据包。</strong></p>
+</li>
+<li><p><strong>-w：将抓包内容保存到指定文件，并不打印出来。</strong></p>
+</li>
+<li><p>-a：把网络地址和广播地址转换成名称。</p>
+</li>
+<li><p><strong>-t：在输出的每一行不打印时间戳。</strong></p>
+</li>
+<li><p><strong>-v：输出一个稍微详细的信息，如在IP包中包含TTL和服务类型的信息。</strong></p>
+</li>
+<li><p><strong>-vv：输出详细的报文信息。</strong></p>
+</li>
+<li><p>-F：从指定的文件中读取表达式，忽略其他表达式。</p>
+</li>
+<li><p><strong>-r：从指定的文件中读取包(这些包一般通过-w选项产生)。</strong></p>
+</li>
+</ul>
+<p>以下这两个参数：可作抓包的时候打印出信息，作为参考，毕竟我们要在wireshark分析</p>
+<ul>
+<li>-XX：输出数据包的头部数据。</li>
+<li>-vvv：打印和分析的时候，产生非常详细的输出。</li>
+</ul>
+<h3 id="tcpdump-h：查看tcpdump版本信息"><a href="#tcpdump-h：查看tcpdump版本信息" class="headerlink" title="tcpdump -h：查看tcpdump版本信息"></a>tcpdump -h：查看tcpdump版本信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump --help</span><br>tcpdump: invalid option -- <span class="hljs-string">&#x27;-&#x27;</span><br>tcpdump version 4.5.1<br>libpcap version 1.5.3<br>Usage: tcpdump [-aAbdDefhHIJKlLnNOpqRStuUvxX] [ -B size ] [ -c count ]<br>                [ -C file_size ] [ -E algo:secret ] [ -F file ] [ -G seconds ]<br>                [ -i interface ] [ -j tstamptype ] [ -M secret ]<br>                [ -P <span class="hljs-keyword">in</span>|out|inout ]<br>                [ -r file ] [ -s snaplen ] [ -T <span class="hljs-built_in">type</span> ] [ -V file ] [ -w file ]<br>                [ -W filecount ] [ -y datalinktype ] [ -z <span class="hljs-built_in">command</span> ]<br>                [ -Z user ] [ expression ]<br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-D：列出可用于tcpdump抓取数据包的网卡接口信息"><a href="#tcpdump-D：列出可用于tcpdump抓取数据包的网卡接口信息" class="headerlink" title="tcpdump -D：列出可用于tcpdump抓取数据包的网卡接口信息"></a>tcpdump -D：列出可用于tcpdump抓取数据包的网卡接口信息</h3><ul>
+<li>获取硬件接口列表信息，看到此列表后，可以决定要在哪个接口上捕获流量。它还告诉你接口是否已启动、正在运行，以及它是否是环回接口。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -D</span><br>1.eth0<br>2.nflog (Linux netfilter <span class="hljs-built_in">log</span> (NFLOG) interface)<br>3.nfqueue (Linux netfilter queue (NFQUEUE) interface)<br>4.usbmon1 (USB bus number 1)<br>5.usbmon2 (USB bus number 2)<br>6.any (Pseudo-device that captures on all interfaces)<br>7.lo<br>-------------------------------------------------------------------------------------------------------------------<br>eth0 //表示该服务器的第一块网卡，一般我们tcpdump抓包都使用这块网卡来抓取。可能有eth1，eth2等等<br>nflog //Linux下的网络过滤网卡，一般我们不使用它<br>nfqueue //Linux网络过滤队列接口，一般不使用它<br>usbmon1 //USB总线接口，一般不使用它<br>any //任何网卡接口<br>lo //指的是该主机的回环地址(127.0.0.1)，一般用来测试网络专用，一般的数据都不通过这块网卡，所以我们用tcpdump抓包的时候也不使用这块网卡。<br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-i：监听指定的网络接口"><a href="#tcpdump-i：监听指定的网络接口" class="headerlink" title="tcpdump -i：监听指定的网络接口"></a>tcpdump -i：监听指定的网络接口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># netstat -i</span><br>Kernel Interface table<br>Iface      MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg<br>eth0      1500      695      0      0 0           472      0      0      0 BMRU<br>lo       65536        8      0      0 0             8      0      0      0 LRU<br>[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 and icmp</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>06:32:09.460471 IP 192.168.32.1 &gt; 192.168.32.166: ICMP <span class="hljs-built_in">echo</span> request, <span class="hljs-built_in">id</span> 1, <span class="hljs-built_in">seq</span> 7, length 40<br>06:32:09.460500 IP 192.168.32.166 &gt; 192.168.32.1: ICMP <span class="hljs-built_in">echo</span> reply, <span class="hljs-built_in">id</span> 1, <span class="hljs-built_in">seq</span> 7, length 40<br>06:32:10.474323 IP 192.168.32.1 &gt; 192.168.32.166: ICMP <span class="hljs-built_in">echo</span> request, <span class="hljs-built_in">id</span> 1, <span class="hljs-built_in">seq</span> 8, length 40<br>06:32:10.474365 IP 192.168.32.166 &gt; 192.168.32.1: ICMP <span class="hljs-built_in">echo</span> reply, <span class="hljs-built_in">id</span> 1, <span class="hljs-built_in">seq</span> 8, length 40<br>06:32:11.509028 IP 192.168.32.1 &gt; 192.168.32.166: ICMP <span class="hljs-built_in">echo</span> request, <span class="hljs-built_in">id</span> 1, <span class="hljs-built_in">seq</span> 9, length 40<br>06:32:11.509073 IP 192.168.32.166 &gt; 192.168.32.1: ICMP <span class="hljs-built_in">echo</span> reply, <span class="hljs-built_in">id</span> 1, <span class="hljs-built_in">seq</span> 9, length 40<br>06:32:12.540879 IP 192.168.32.1 &gt; 192.168.32.166: ICMP <span class="hljs-built_in">echo</span> request, <span class="hljs-built_in">id</span> 1, <span class="hljs-built_in">seq</span> 10, length 40<br>06:32:12.540919 IP 192.168.32.166 &gt; 192.168.32.1: ICMP <span class="hljs-built_in">echo</span> reply, <span class="hljs-built_in">id</span> 1, <span class="hljs-built_in">seq</span> 10, length 40<br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-e：在输出行打印出数据链路层的头部信息"><a href="#tcpdump-e：在输出行打印出数据链路层的头部信息" class="headerlink" title="tcpdump -e：在输出行打印出数据链路层的头部信息"></a>tcpdump -e：在输出行打印出数据链路层的头部信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 5 -nn -e</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>22:52:24.460136 00:0c:29:aa:f1:db &gt; 00:50:56:c0:00:08, ethertype IPv4 (0x0800), length 262: 192.168.32.166.22 &gt; 192.168.32.1.14358: Flags [P.], <span class="hljs-built_in">seq</span> 3225709502:3225709698, ack 4145329991, win 177, options [nop,nop,TS val 289241 ecr 6998988], length 196<br>22:52:24.460359 00:50:56:c0:00:08 &gt; 00:0c:29:aa:f1:db, ethertype IPv4 (0x0800), length 66: 192.168.32.1.14358 &gt; 192.168.32.166.22: Flags [.], ack 196, win 258, options [nop,nop,TS val 6998988 ecr 289237], length 0<br>22:52:25.769017 00:50:56:c0:00:08 &gt; 00:0c:29:aa:f1:db, ethertype ARP (0x0806), length 60: Request who-has 192.168.32.166 (00:0c:29:aa:f1:db) tell 192.168.32.1, length 46<br>22:52:25.769047 00:0c:29:aa:f1:db &gt; 00:50:56:c0:00:08, ethertype ARP (0x0806), length 42: Reply 192.168.32.166 is-at 00:0c:29:aa:f1:db, length 28<br>22:52:25.769849 00:0c:29:aa:f1:db &gt; 00:50:56:c0:00:08, ethertype IPv4 (0x0800), length 582: 192.168.32.166.22 &gt; 192.168.32.1.14358: Flags [P.], <span class="hljs-built_in">seq</span> 196:712, ack 1, win 177, options [nop,nop,TS val 290551 ecr 6998988], length 516<br>5 packets captured<br>6 packets received by filter<br>0 packets dropped by kernel<br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-c：截取指定数量的数据包"><a href="#tcpdump-c：截取指定数量的数据包" class="headerlink" title="tcpdump -c：截取指定数量的数据包"></a>tcpdump -c：截取指定数量的数据包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 5</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>06:34:39.880221 IP 192.168.32.166.ssh &gt; 192.168.32.1.5480: Flags [P.], <span class="hljs-built_in">seq</span> 3181057663:3181057859, ack 3391998684, win 177, options [nop,nop,TS val 403332 ecr 1132356], length 196<br>06:34:39.880575 IP 192.168.32.1.5480 &gt; 192.168.32.166.ssh: Flags [.], ack 196, win 256, options [nop,nop,TS val 1132358 ecr 403322], length 0<br>06:34:40.883095 IP 192.168.32.166.35632 &gt; public1.114dns.com.domain: 56985+ PTR? 1.32.168.192.in-addr.arpa. (43)<br>06:34:40.905708 IP public1.114dns.com.domain &gt; 192.168.32.166.35632: 56985 NXDomain 0/1/0 (120)<br>06:34:40.906099 IP 192.168.32.166.57403 &gt; public1.114dns.com.domain: 47864+ PTR? 166.32.168.192.in-addr.arpa. (45)<br>5 packets captured<br>15 packets received by filter<br>0 packets dropped by kernel	<br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-n：不进行网络地址的转换-amp-amp-tcpdump-nn：不进行网络地址及端口的转换"><a href="#tcpdump-n：不进行网络地址的转换-amp-amp-tcpdump-nn：不进行网络地址及端口的转换" class="headerlink" title="tcpdump -n：不进行网络地址的转换 &amp;&amp; tcpdump -nn：不进行网络地址及端口的转换"></a>tcpdump -n：不进行网络地址的转换 &amp;&amp; tcpdump -nn：不进行网络地址及端口的转换</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 4 -n</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>06:47:16.333392 IP 192.168.32.166.ssh &gt; 192.168.32.1.5480: Flags [P.], <span class="hljs-built_in">seq</span> 3181074491:3181074687, ack 3392003180, win 177, options [nop,nop,TS val 1159785 ecr 1208001], length 196<br>06:47:16.333749 IP 192.168.32.1.5480 &gt; 192.168.32.166.ssh: Flags [.], ack 196, win 254, options [nop,nop,TS val 1208002 ecr 1159775], length 0<br>06:47:17.334385 IP 192.168.32.166.ssh &gt; 192.168.32.1.5480: Flags [P.], <span class="hljs-built_in">seq</span> 196:568, ack 1, win 177, options [nop,nop,TS val 1160786 ecr 1208002], length 372<br>06:47:17.386151 IP 192.168.32.1.5480 &gt; 192.168.32.166.ssh: Flags [.], ack 568, win 260, options [nop,nop,TS val 1208107 ecr 1160786], length 0<br>4 packets captured<br>4 packets received by filter<br>0 packets dropped by kernel<br>[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 4 -nn</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>06:47:25.626276 IP 192.168.32.166.22 &gt; 192.168.32.1.5480: Flags [P.], <span class="hljs-built_in">seq</span> 3181075683:3181075879, ack 3392003304, win 177, options [nop,nop,TS val 1169078 ecr 1208931], length 196<br>06:47:25.626618 IP 192.168.32.1.5480 &gt; 192.168.32.166.22: Flags [.], ack 196, win 256, options [nop,nop,TS val 1208931 ecr 1169073], length 0<br>06:47:26.628365 IP 192.168.32.166.22 &gt; 192.168.32.1.5480: Flags [P.], <span class="hljs-built_in">seq</span> 196:568, ack 1, win 177, options [nop,nop,TS val 1170081 ecr 1208931], length 372<br>06:47:26.680848 IP 192.168.32.1.5480 &gt; 192.168.32.166.22: Flags [.], ack 568, win 255, options [nop,nop,TS val 1209037 ecr 1170081], length 0<br>4 packets captured<br>4 packets received by filter<br>0 packets dropped by kernel<br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-s：截取指定大小的数据包"><a href="#tcpdump-s：截取指定大小的数据包" class="headerlink" title="tcpdump -s：截取指定大小的数据包"></a>tcpdump -s：截取指定大小的数据包</h3><p>为了分析数据包的内容，可以通过-s选项改变截取数据包的大小；-s0表示完整数据包(-X：表示以ASCII文本形式显示)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 2 -nn -X -s 200</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 200 bytes<br>06:52:35.539512 IP 192.168.32.166.22 &gt; 192.168.32.1.5480: Flags [P.], <span class="hljs-built_in">seq</span> 3181095687:3181095883, ack 3392006452, win 177, options [nop,nop,TS val 1478992 ecr 1239922], length 196<br>        0x0000:  4510 00f8 6ed0 4000 4006 0928 c0a8 20a6  E...n.@.@..(....<br>        0x0010:  c0a8 2001 0016 1568 bd9b ab07 ca2d e934  .......h.....-.4<br>        0x0020:  8018 00b1 c2e2 0000 0101 080a 0016 9150  ...............P<br>        0x0030:  0012 eb72 0000 00b0 c549 dc8d cfef 1004  ...r.....I......<br>        0x0040:  5a19 8d68 a66a 3d6b 8dd2 aca2 4a03 4bc6  Z..h.j=k....J.K.<br>        0x0050:  3a2b e22f 85d8 b5c5 dea5 bc9b 9f64 b57e  :+./.........d.~<br>        0x0060:  e369 5f5a d79e d4dd 74a5 abde 6362 ceff  .i_Z....t...cb..<br>        0x0070:  c24e 6be2 84f4 8399 1bcc 4c83 12b1 3dd7  .Nk.......L...=.<br>        0x0080:  96a8 9046 b809 f59a 6697 68a9 16a9 a4b6  ...F....f.h.....<br>        0x0090:  ba32 6226 e565 1535 503c 8225 d63b edad  .2b&amp;.e.5P&lt;.%.;..<br>        0x00a0:  4576 9670 0d93 181a b795 dfd1 5457 8558  Ev.p........TW.X<br>        0x00b0:  08ce eecb 3a7d 5918 5f60                 ....:&#125;Y._`<br>06:52:35.539858 IP 192.168.32.1.5480 &gt; 192.168.32.166.22: Flags [.], ack 196, win 256, options [nop,nop,TS val 1239922 ecr 1478987], length 0<br>        0x0000:  4500 0034 7faa 4000 4006 f921 c0a8 2001  E..4..@.@..!....<br>        0x0010:  c0a8 20a6 1568 0016 ca2d e934 bd9b abcb  .....h...-.4....<br>        0x0020:  8010 0100 0497 0000 0101 080a 0012 eb72  ...............r<br>        0x0030:  0016 914b                                ...K<br>2 packets captured<br>2 packets received by filter<br>0 packets dropped by kernel<br><span class="hljs-comment"># -x：把截取的数据包内容以16进制打印出来；-X：把截取的数据包内容以ASCII文本形式打印出来。</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-w：将抓包内容保存到指定文件，并不打印出来"><a href="#tcpdump-w：将抓包内容保存到指定文件，并不打印出来" class="headerlink" title="tcpdump -w：将抓包内容保存到指定文件，并不打印出来"></a>tcpdump -w：将抓包内容保存到指定文件，并不打印出来</h3><ul>
+<li>将报文抓取后保存为.pcap格式的文件，之后使用wireshark进行查看分析</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 20 -nn -w 0928.pcap</span><br>tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>20 packets captured<br>23 packets received by filter<br>0 packets dropped by kernel<br>[root@localhost ~]<span class="hljs-comment"># </span><br>[root@localhost ~]<span class="hljs-comment"># ls</span><br>0928.pcap  anaconda-ks.cfg  cdrom  etc.tar.gz  nohup.out<br>[root@localhost ~]<span class="hljs-comment"># sz 0928.pcap </span><br><span class="hljs-comment"># 可以通过sz scp或者sftp工具传输0928.pcap报文到本地wireshark进行分析</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-a：把网络地址和广播地址转换成名称"><a href="#tcpdump-a：把网络地址和广播地址转换成名称" class="headerlink" title="tcpdump -a：把网络地址和广播地址转换成名称"></a>tcpdump -a：把网络地址和广播地址转换成名称</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 5 -nn -a</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>04:57:01.119940 IP 192.168.32.166.22 &gt; 192.168.32.1.9418: Flags [P.], <span class="hljs-built_in">seq</span> 1111385826:1111386022, ack 139811203, win 177, options [nop,nop,TS val 5771439 ecr 9186614], length 196<br>04:57:01.120193 IP 192.168.32.1.9418 &gt; 192.168.32.166.22: Flags [.], ack 196, win 256, options [nop,nop,TS val 9186615 ecr 5771435], length 0<br>04:57:02.122194 IP 192.168.32.166.22 &gt; 192.168.32.1.9418: Flags [P.], <span class="hljs-built_in">seq</span> 196:552, ack 1, win 177, options [nop,nop,TS val 5772442 ecr 9186615], length 356<br>04:57:02.172609 IP 192.168.32.1.9418 &gt; 192.168.32.166.22: Flags [.], ack 552, win 255, options [nop,nop,TS val 9186720 ecr 5772442], length 0<br>04:57:04.124794 IP 192.168.32.166.22 &gt; 192.168.32.1.9418: Flags [P.], <span class="hljs-built_in">seq</span> 552:892, ack 1, win 177, options [nop,nop,TS val 5774445 ecr 9186720], length 340<br>5 packets captured<br>6 packets received by filter<br>0 packets dropped by kernel<br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-t：在输出的每一行不打印时间戳"><a href="#tcpdump-t：在输出的每一行不打印时间戳" class="headerlink" title="tcpdump -t：在输出的每一行不打印时间戳"></a>tcpdump -t：在输出的每一行不打印时间戳</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 4 -nn -t</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>IP 192.168.32.166.22 &gt; 192.168.32.1.9418: Flags [P.], <span class="hljs-built_in">seq</span> 1111389102:1111389298, ack 139812027, win 177, options [nop,nop,TS val 5884220 ecr 9197891], length 196<br>IP 192.168.32.1.9418 &gt; 192.168.32.166.22: Flags [.], ack 196, win 255, options [nop,nop,TS val 9197891 ecr 5884214], length 0<br>IP 192.168.32.166.22 &gt; 192.168.32.1.9418: Flags [P.], <span class="hljs-built_in">seq</span> 196:520, ack 1, win 177, options [nop,nop,TS val 5885221 ecr 9197891], length 324<br>IP 192.168.32.1.9418 &gt; 192.168.32.166.22: Flags [.], ack 520, win 254, options [nop,nop,TS val 9197997 ecr 5885221], length 0<br>4 packets captured<br>4 packets received by filter<br>0 packets dropped by kernel	<br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-v：输出一个稍微详细的信息，如在IP包中包含TTL和服务类型的信息"><a href="#tcpdump-v：输出一个稍微详细的信息，如在IP包中包含TTL和服务类型的信息" class="headerlink" title="tcpdump -v：输出一个稍微详细的信息，如在IP包中包含TTL和服务类型的信息"></a>tcpdump -v：输出一个稍微详细的信息，如在IP包中包含TTL和服务类型的信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 4 -nn -t -v</span><br>tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>IP (tos 0x10, ttl 64, <span class="hljs-built_in">id</span> 6098, offset 0, flags [DF], proto TCP (6), length 184)<br>    192.168.32.166.22 &gt; 192.168.32.1.9418: Flags [P.], <span class="hljs-built_in">cksum</span> 0xc2a2 (incorrect -&gt; 0x4859), <span class="hljs-built_in">seq</span> 1111390402:1111390534, ack 139812259, win 177, options [nop,nop,TS val 5976100 ecr 9207078], length 132<br>IP (tos 0x0, ttl 64, <span class="hljs-built_in">id</span> 28652, offset 0, flags [DF], proto TCP (6), length 52)<br>    192.168.32.1.9418 &gt; 192.168.32.166.22: Flags [.], <span class="hljs-built_in">cksum</span> 0xbf38 (correct), ack 132, win 258, options [nop,nop,TS val 9207078 ecr 5976096], length 0<br>IP (tos 0x10, ttl 64, <span class="hljs-built_in">id</span> 6099, offset 0, flags [DF], proto TCP (6), length 600)<br>    192.168.32.166.22 &gt; 192.168.32.1.9418: Flags [P.], <span class="hljs-built_in">cksum</span> 0xc442 (incorrect -&gt; 0x045c), <span class="hljs-built_in">seq</span> 132:680, ack 1, win 177, options [nop,nop,TS val 5977101 ecr 9207078], length 548<br>IP (tos 0x0, ttl 64, <span class="hljs-built_in">id</span> 28653, offset 0, flags [DF], proto TCP (6), length 52)<br>    192.168.32.1.9418 &gt; 192.168.32.166.22: Flags [.], <span class="hljs-built_in">cksum</span> 0xb8c0 (correct), ack 680, win 256, options [nop,nop,TS val 9207183 ecr 5977101], length 0<br>4 packets captured<br>4 packets received by filter<br>0 packets dropped by kernel<br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-vv：输出详细的报文信息"><a href="#tcpdump-vv：输出详细的报文信息" class="headerlink" title="tcpdump -vv：输出详细的报文信息"></a>tcpdump -vv：输出详细的报文信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 4 -nn -t -vv</span><br>tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>IP (tos 0x10, ttl 64, <span class="hljs-built_in">id</span> 6104, offset 0, flags [DF], proto TCP (6), length 184)<br>    192.168.32.166.22 &gt; 192.168.32.1.9418: Flags [P.], <span class="hljs-built_in">cksum</span> 0xc2a2 (incorrect -&gt; 0x1688), <span class="hljs-built_in">seq</span> 1111391898:1111392030, ack 139812383, win 177, options [nop,nop,TS val 6036304 ecr 9213100], length 132<br>IP (tos 0x0, ttl 64, <span class="hljs-built_in">id</span> 28660, offset 0, flags [DF], proto TCP (6), length 52)<br>    192.168.32.1.9418 &gt; 192.168.32.166.22: Flags [.], <span class="hljs-built_in">cksum</span> 0xb631 (correct), <span class="hljs-built_in">seq</span> 1, ack 132, win 259, options [nop,nop,TS val 9213101 ecr 6036298], length 0<br>IP (tos 0x10, ttl 64, <span class="hljs-built_in">id</span> 6105, offset 0, flags [DF], proto TCP (6), length 616)<br>    192.168.32.166.22 &gt; 192.168.32.1.9418: Flags [P.], <span class="hljs-built_in">cksum</span> 0xc452 (incorrect -&gt; 0x4c01), <span class="hljs-built_in">seq</span> 132:696, ack 1, win 177, options [nop,nop,TS val 6037306 ecr 9213101], length 564<br>IP (tos 0x0, ttl 64, <span class="hljs-built_in">id</span> 28661, offset 0, flags [DF], proto TCP (6), length 52)<br>    192.168.32.1.9418 &gt; 192.168.32.166.22: Flags [.], <span class="hljs-built_in">cksum</span> 0xafa7 (correct), <span class="hljs-built_in">seq</span> 1, ack 696, win 256, options [nop,nop,TS val 9213206 ecr 6037306], length 0<br>4 packets captured<br>4 packets received by filter<br>0 packets dropped by kernel<br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-r：从指定的文件中读取包-这些包一般通过-w选项产生"><a href="#tcpdump-r：从指定的文件中读取包-这些包一般通过-w选项产生" class="headerlink" title="tcpdump -r：从指定的文件中读取包(这些包一般通过-w选项产生)"></a>tcpdump -r：从指定的文件中读取包(这些包一般通过-w选项产生)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># ls</span><br>0928.pcap  anaconda-ks.cfg  cdrom  etc.tar.gz  nohup.out<br>[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 4 -nn -r 0928.pcap </span><br>reading from file 0928.pcap, link-type EN10MB (Ethernet)<br>22:45:40.204635 IP 192.168.32.166.22 &gt; 192.168.32.1.14358: Flags [P.], <span class="hljs-built_in">seq</span> 3225700090:3225700222, ack 4145327419, win 177, options [nop,nop,TS val 4294852282 ecr 6958562], length 132<br>22:45:40.204851 IP 192.168.32.1.14358 &gt; 192.168.32.166.22: Flags [.], ack 132, win 260, options [nop,nop,TS val 6958564 ecr 4294852264], length 0<br>22:45:54.659141 IP 192.168.32.166.123 &gt; 162.159.200.1.123: NTPv3, Client, length 48<br>22:45:55.920286 IP 192.168.32.166.123 &gt; 162.159.200.123.123: NTPv3, Client, length 48<br>[root@localhost ~]<span class="hljs-comment"># </span><br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-q：快速输出，仅列出少数的传输协议信息"><a href="#tcpdump-q：快速输出，仅列出少数的传输协议信息" class="headerlink" title="tcpdump -q：快速输出，仅列出少数的传输协议信息"></a>tcpdump -q：快速输出，仅列出少数的传输协议信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 4 -nn -q</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>05:13:31.753240 IP 192.168.32.166.22 &gt; 192.168.32.1.9418: tcp 196<br>05:13:31.753450 IP 192.168.32.1.9418 &gt; 192.168.32.166.22: tcp 0<br>05:13:32.754991 IP 192.168.32.166.22 &gt; 192.168.32.1.9418: tcp 180<br>05:13:32.805703 IP 192.168.32.1.9418 &gt; 192.168.32.166.22: tcp 0<br>4 packets captured<br>4 packets received by filter<br>0 packets dropped by kernel<br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-p：不让网络界面进入混杂模式"><a href="#tcpdump-p：不让网络界面进入混杂模式" class="headerlink" title="tcpdump -p：不让网络界面进入混杂模式"></a>tcpdump -p：不让网络界面进入混杂模式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 4 -nn -p</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>05:14:59.146874 IP 192.168.32.166.22 &gt; 192.168.32.1.9418: Flags [P.], <span class="hljs-built_in">seq</span> 1111423886:1111424082, ack 139816387, win 177, options [nop,nop,TS val 6849467 ecr 9294417], length 196<br>05:14:59.147090 IP 192.168.32.1.9418 &gt; 192.168.32.166.22: Flags [.], ack 196, win 255, options [nop,nop,TS val 9294418 ecr 6849464], length 0<br>05:15:00.148070 IP 192.168.32.166.22 &gt; 192.168.32.1.9418: Flags [P.], <span class="hljs-built_in">seq</span> 196:552, ack 1, win 177, options [nop,nop,TS val 6850468 ecr 9294418], length 356<br>05:15:00.199906 IP 192.168.32.1.9418 &gt; 192.168.32.166.22: Flags [.], ack 552, win 260, options [nop,nop,TS val 9294523 ecr 6850468], length 0<br>4 packets captured<br>4 packets received by filter<br>0 packets dropped by kernel<br></code></pre></td></tr></table></figure>
+
+<h3 id="tcpdump-T：将监听到的包直接解释为指定的类型的报文"><a href="#tcpdump-T：将监听到的包直接解释为指定的类型的报文" class="headerlink" title="tcpdump -T：将监听到的包直接解释为指定的类型的报文"></a>tcpdump -T：将监听到的包直接解释为指定的类型的报文</h3><ul>
+<li>常见的类型有<strong>rpc</strong>(远程过程调用)和<strong>snmp</strong>(简单网络管理协议)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 -c 4 -nn -T rpc</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>05:18:57.401450 IP 192.168.32.166.22 &gt; 192.168.32.1.9418: Flags [P.], <span class="hljs-built_in">seq</span> 1111425846:1111426042, ack 139817067, win 177, options [nop,nop,TS val 7087721 ecr 9318242], length 196<br>05:18:57.401680 IP 192.168.32.1.9418 &gt; 192.168.32.166.22: Flags [.], ack 196, win 260, options [nop,nop,TS val 9318243 ecr 7087716], length 0<br>05:18:58.410418 IP 192.168.32.166.22 &gt; 192.168.32.1.9418: Flags [P.], <span class="hljs-built_in">seq</span> 196:552, ack 1, win 177, options [nop,nop,TS val 7088730 ecr 9318243], length 356<br>05:18:58.462108 IP 192.168.32.1.9418 &gt; 192.168.32.166.22: Flags [.], ack 552, win 258, options [nop,nop,TS val 9318349 ecr 7088730], length 0<br>4 packets captured<br>4 packets received by filter<br>0 packets dropped by kernel<br></code></pre></td></tr></table></figure>
+
+<h2 id="tcpdump的常用协议参数-协议关键字"><a href="#tcpdump的常用协议参数-协议关键字" class="headerlink" title="tcpdump的常用协议参数(协议关键字)"></a>tcpdump的常用协议参数(协议关键字)</h2><ul>
+<li>缺省是所有协议的信息包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">传输层协议：tcp、udp、icmp<br>网络层协议：ip、ipv6<br>数据链路层协议：arp、rarp、ether、wlan<br></code></pre></td></tr></table></figure>
+
+<h2 id="tcpdump的常用方向参数-方向关键字"><a href="#tcpdump的常用方向参数-方向关键字" class="headerlink" title="tcpdump的常用方向参数(方向关键字)"></a>tcpdump的常用方向参数(方向关键字)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 如果没有特殊说明，默认的类型是src or dst</span><br>src：ip包的源地址，如：src 10.1.110.110<br>dst：ip包的目标地址，如：dst 10.1.110.110<br>src and dst：ip包的源地址和目的地址，如：src and dst 10.1.110.110<br>src or dst：ip包的源地址或目的地址，如：src and dst 10.1.110.110<br></code></pre></td></tr></table></figure>
+
+<h2 id="tcpdump的常用类型参数-类型关键字"><a href="#tcpdump的常用类型参数-类型关键字" class="headerlink" title="tcpdump的常用类型参数(类型关键字)"></a>tcpdump的常用类型参数(类型关键字)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 如果没有特殊说明，默认的类型是host</span><br>host：指明一台主机。如：host 10.1.110.110<br>net：指明一个网络地址，如：net 10.1.0.0/16<br>port：指明端口号：如：port 8090<br>port range：指明一组端口号：如 port range 8800-8803<br></code></pre></td></tr></table></figure>
+
+<h2 id="tcpdump的其他类型参数-其他类型关键字"><a href="#tcpdump的其他类型参数-其他类型关键字" class="headerlink" title="tcpdump的其他类型参数(其他类型关键字)"></a>tcpdump的其他类型参数(其他类型关键字)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gateway、broadcast、less、greater<br></code></pre></td></tr></table></figure>
+
+<h2 id="tcpdump中逻辑运算符和比较运算符的使用"><a href="#tcpdump中逻辑运算符和比较运算符的使用" class="headerlink" title="tcpdump中逻辑运算符和比较运算符的使用"></a>tcpdump中逻辑运算符和比较运算符的使用</h2><ul>
+<li>逻辑运算符</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">非运算：<span class="hljs-string">&#x27;not&#x27;</span>/<span class="hljs-string">&#x27;!&#x27;</span><br>与运算：<span class="hljs-string">&#x27;and&#x27;</span>/<span class="hljs-string">&#x27;&amp;&amp;&#x27;</span><br>或运算：<span class="hljs-string">&#x27;or&#x27;</span>/<span class="hljs-string">&#x27;||&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>比较运算符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>英文写法</th>
+<th>C语言写法</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>eq</td>
+<td>&#x3D;&#x3D;</td>
+<td>equal</td>
+</tr>
+<tr>
+<td>ne</td>
+<td>!&#x3D;</td>
+<td>not equal</td>
+</tr>
+<tr>
+<td>gt</td>
+<td>&gt;</td>
+<td>greater than</td>
+</tr>
+<tr>
+<td>lt</td>
+<td>&lt;</td>
+<td>less than</td>
+</tr>
+<tr>
+<td>ge</td>
+<td>&gt;&#x3D;</td>
+<td>greater than or equal to</td>
+</tr>
+<tr>
+<td>le</td>
+<td>&lt;&#x3D;</td>
+<td>less than or equal to</td>
+</tr>
+</tbody></table>
+<ul>
+<li>注：表达式区分大小写，“udp”不能写成“Udp”，“eq”不能写成“Eq”。</li>
+</ul>
+<h2 id="tcpdump的常见使用"><a href="#tcpdump的常见使用" class="headerlink" title="tcpdump的常见使用"></a>tcpdump的常见使用</h2><h3 id="抓取指定mac的数据包"><a href="#抓取指定mac的数据包" class="headerlink" title="抓取指定mac的数据包"></a>抓取指定mac的数据包</h3><ul>
+<li>tcpdump -i eth0 -c 4 ether src [mac地址] -nne</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 -c 4 ether src 00:0c:29:aa:f1:db -nne</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>21:00:27.163680 00:0c:29:aa:f1:db &gt; 00:50:56:c0:00:08, ethertype IPv4 (0x0800), length 262: 192.168.32.166.22 &gt; 192.168.32.1.4297: Flags [P.], <span class="hljs-built_in">seq</span> 3818271207:3818271403, ack 131793019, win 177, options [nop,nop,TS val 4294809218 ecr 470878], length 196<br>21:00:29.165674 00:0c:29:aa:f1:db &gt; 00:50:56:c0:00:08, ethertype IPv4 (0x0800), length 358: 192.168.32.166.22 &gt; 192.168.32.1.4297: Flags [P.], <span class="hljs-built_in">seq</span> 196:488, ack 1, win 177, options [nop,nop,TS val 4294811220 ecr 470878], length 292<br>21:00:30.167267 00:0c:29:aa:f1:db &gt; 00:50:56:c0:00:08, ethertype IPv4 (0x0800), length 342: 192.168.32.166.22 &gt; 192.168.32.1.4297: Flags [P.], <span class="hljs-built_in">seq</span> 488:764, ack 1, win 177, options [nop,nop,TS val 4294812222 ecr 471085], length 276<br>21:00:31.168938 00:0c:29:aa:f1:db &gt; 00:50:56:c0:00:08, ethertype IPv4 (0x0800), length 342: 192.168.32.166.22 &gt; 192.168.32.1.4297: Flags [P.], <span class="hljs-built_in">seq</span> 764:1040, ack 1, win 177, options [nop,nop,TS val 4294813223 ecr 471184], length 276<br>4 packets captured<br>4 packets received by filter<br>0 packets dropped by kernel<br></code></pre></td></tr></table></figure>
+
+<h3 id="同时抓取多个地址，其中一个方向的地址为多个"><a href="#同时抓取多个地址，其中一个方向的地址为多个" class="headerlink" title="同时抓取多个地址，其中一个方向的地址为多个"></a>同时抓取多个地址，其中一个方向的地址为多个</h3><ul>
+<li>tcpdump -i eth0 host 192.168.32.166 and host ‘(8.8.8.8 or 114.114.114.114)’ -nne</li>
+<li>ping 114.114.114.114 -c 2 ; ping 8.8.8.8 -c 2</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 and host &#x27;(8.8.8.8 or 114.114.114.114)&#x27; -nne</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br><br>21:07:13.201077 00:0c:29:aa:f1:db &gt; 00:50:56:fa:20:ae, ethertype IPv4 (0x0800), length 98: 192.168.32.166 &gt; 114.114.114.114: ICMP <span class="hljs-built_in">echo</span> request, <span class="hljs-built_in">id</span> 2151, <span class="hljs-built_in">seq</span> 3, length 64<br>21:07:13.217661 00:50:56:fa:20:ae &gt; 00:0c:29:aa:f1:db, ethertype IPv4 (0x0800), length 98: 114.114.114.114 &gt; 192.168.32.166: ICMP <span class="hljs-built_in">echo</span> reply, <span class="hljs-built_in">id</span> 2151, <span class="hljs-built_in">seq</span> 3, length 64<br>21:07:14.203185 00:0c:29:aa:f1:db &gt; 00:50:56:fa:20:ae, ethertype IPv4 (0x0800), length 98: 192.168.32.166 &gt; 114.114.114.114: ICMP <span class="hljs-built_in">echo</span> request, <span class="hljs-built_in">id</span> 2151, <span class="hljs-built_in">seq</span> 4, length 64<br>21:07:14.218540 00:50:56:fa:20:ae &gt; 00:0c:29:aa:f1:db, ethertype IPv4 (0x0800), length 98: 114.114.114.114 &gt; 192.168.32.166: ICMP <span class="hljs-built_in">echo</span> reply, <span class="hljs-built_in">id</span> 2151, <span class="hljs-built_in">seq</span> 4, length 64<br>21:07:16.447637 00:0c:29:aa:f1:db &gt; 00:50:56:fa:20:ae, ethertype IPv4 (0x0800), length 98: 192.168.32.166 &gt; 8.8.8.8: ICMP <span class="hljs-built_in">echo</span> request, <span class="hljs-built_in">id</span> 2152, <span class="hljs-built_in">seq</span> 1, length 64<br>21:07:16.533656 00:50:56:fa:20:ae &gt; 00:0c:29:aa:f1:db, ethertype IPv4 (0x0800), length 98: 8.8.8.8 &gt; 192.168.32.166: ICMP <span class="hljs-built_in">echo</span> reply, <span class="hljs-built_in">id</span> 2152, <span class="hljs-built_in">seq</span> 1, length 64<br>21:07:17.449386 00:0c:29:aa:f1:db &gt; 00:50:56:fa:20:ae, ethertype IPv4 (0x0800), length 98: 192.168.32.166 &gt; 8.8.8.8: ICMP <span class="hljs-built_in">echo</span> request, <span class="hljs-built_in">id</span> 2152, <span class="hljs-built_in">seq</span> 2, length 64<br>21:07:17.530102 00:50:56:fa:20:ae &gt; 00:0c:29:aa:f1:db, ethertype IPv4 (0x0800), length 98: 8.8.8.8 &gt; 192.168.32.166: ICMP <span class="hljs-built_in">echo</span> reply, <span class="hljs-built_in">id</span> 2152, <span class="hljs-built_in">seq</span> 2, length 64<br>^C<br>8 packets captured<br>8 packets received by filter<br>0 packets dropped by kernel<br></code></pre></td></tr></table></figure>
+
+<h3 id="抓取指定源地址、目的IP的数据包"><a href="#抓取指定源地址、目的IP的数据包" class="headerlink" title="抓取指定源地址、目的IP的数据包"></a>抓取指定源地址、目的IP的数据包</h3><ul>
+<li>tcpdump -i eth0 src 192.168.32.166 and dst 192.168.32.1 -nn</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 src 192.168.32.166 and dst 192.168.32.1 -nn</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>21:14:27.905402 IP 192.168.32.166.22 &gt; 192.168.32.1.4297: Flags [P.], <span class="hljs-built_in">seq</span> 3818303571:3818303767, ack 131804491, win 217, options [nop,nop,TS val 682664 ecr 554951], length 196<br>21:14:28.906741 IP 192.168.32.166.22 &gt; 192.168.32.1.4297: Flags [P.], <span class="hljs-built_in">seq</span> 196:408, ack 1, win 217, options [nop,nop,TS val 683665 ecr 554952], length 212<br>21:14:29.907188 IP 192.168.32.166.22 &gt; 192.168.32.1.4297: Flags [P.], <span class="hljs-built_in">seq</span> 408:604, ack 1, win 217, options [nop,nop,TS val 684666 ecr 555057], length 196<br>21:14:31.910530 IP 192.168.32.166.22 &gt; 192.168.32.1.4297: Flags [P.], <span class="hljs-built_in">seq</span> 604:800, ack 1, win 217, options [nop,nop,TS val 686669 ecr 555157], length 196<br>^C<br>4 packets captured<br>5 packets received by filter<br>0 packets dropped by kernel<br></code></pre></td></tr></table></figure>
+
+<h3 id="抓取排除某地址或端口的数据包"><a href="#抓取排除某地址或端口的数据包" class="headerlink" title="抓取排除某地址或端口的数据包"></a>抓取排除某地址或端口的数据包</h3><ul>
+<li>正常表达式加一个not即可</li>
+<li>tcpdump -i eth0 host 192.168.32.166 and not port 22 -nn -c 3</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@localhost ~]<span class="hljs-comment"># tcpdump -i eth0 host 192.168.32.166 and not port 22 -nn -c 3</span><br>tcpdump: verbose output suppressed, use -v or -vv <span class="hljs-keyword">for</span> full protocol decode<br>listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes<br>21:16:16.665783 IP 192.168.32.166.123 &gt; 193.182.111.141.123: NTPv3, Client, length 48<br>21:16:22.540988 ARP, Request who-has 192.168.32.166 (00:0c:29:aa:f1:db) tell 192.168.32.1, length 46<br>21:16:22.541024 ARP, Reply 192.168.32.166 is-at 00:0c:29:aa:f1:db, length 28<br>3 packets captured<br>3 packets received by filter<br>0 packets dropped by kernel<br></code></pre></td></tr></table></figure>
+
+<h3 id="抓取指定tcp标识位的数据包"><a href="#抓取指定tcp标识位的数据包" class="headerlink" title="抓取指定tcp标识位的数据包"></a>抓取指定tcp标识位的数据包</h3><p>tcp包里有个flags字段表示包的类型，tcpdump可以根据该字段抓取相应类型的包：tcp[13]就是tcp flags(URG,ACK,PSH,RST,SYN,FIN)，按照这个计算标志位置位后的数值，只有FIN置位为1，ACK+SYN置位就是18。</p>
+<ul>
+<li>抓取FIN包：tcpdump -i any ‘tcp[13] &amp; 1 !&#x3D; 0’ -s0</li>
+<li>抓取SYN+FIN包：tcpdump -i any -p tcp ‘tcp[13] &amp; 3 !&#x3D; 0’ -s0</li>
+<li>抓取RST包：tcpdump -i any port 9001 and ‘tcp[13] &amp; 4 !&#x3D; 0’ -s0</li>
+</ul>
+<h3 id="抓取带vlan的数据包"><a href="#抓取带vlan的数据包" class="headerlink" title="抓取带vlan的数据包"></a>抓取带vlan的数据包</h3><ul>
+<li>tcpdump -i eth0 vlan and host 192.168.32.166 -c 3 -nn</li>
+</ul>
+<h2 id="wireshark的简介"><a href="#wireshark的简介" class="headerlink" title="wireshark的简介"></a>wireshark的简介</h2><p>Wireshark是使用最广泛的一款「开源抓包软件」，常用来检测网络问题、攻击溯源、或者分析底层通信机制。它使用WinPCAP作为接口，直接与网卡进行数据报文交换。</p>
+<p>Wireshark使用的环境大致分为两种，一种是电脑直连互联网的单机环境，另外一种就是应用比较多的互联网环境，也就是连接交换机的情况。</p>
+<p>「单机情况」下，Wireshark直接抓取本机网卡的网络流量；<br>「交换机情况」下，Wireshark通过端口镜像、ARP欺骗等方式获取局域网中的网络流量。</p>
+<ul>
+<li>端口镜像：利用交换机的接口，将局域网的网络流量转发到指定电脑的网卡上。</li>
+<li>ARP欺骗：交换机根据MAC地址转发数据，伪装其他终端的MAC地址，从而获取局域网的网络流量。</li>
+</ul>
+<h2 id="wireshark中过滤器的使用"><a href="#wireshark中过滤器的使用" class="headerlink" title="wireshark中过滤器的使用"></a>wireshark中过滤器的使用</h2><p>过滤器是Wireshark的核心功能，也是我们平时使用最多的一个功能。</p>
+<p>Wireshark提供了两个过滤器：抓包过滤器 和 显示过滤器。两个过滤器的过滤思路不同。</p>
+<ol>
+<li>抓包过滤器：重点在动作，需要的包我才抓，不需要的我就不抓。</li>
+<li>显示过滤器：重点在数据的展示，包已经抓了，只是不显示出来。</li>
+</ol>
+<h3 id="1-抓包过滤器"><a href="#1-抓包过滤器" class="headerlink" title="1. 抓包过滤器"></a>1. 抓包过滤器</h3><p>抓包过滤器在抓包前使用，它的过滤有一个基本的语法格式：BPF语法格式。</p>
+<h4 id="1）BPF语法"><a href="#1）BPF语法" class="headerlink" title="1）BPF语法"></a>1）BPF语法</h4><p>BPF（全称 Berkeley Packet Filter），中文叫伯克利封包过滤器，它有四个核心元素：类型、方向、协议 和 逻辑运算符。</p>
+<ol>
+<li>类型Type：主机（host）、网段（net）、端口（port）</li>
+<li>方向Dir：源地址（src）、目标地址（dst）</li>
+<li>协议Proto：各种网络协议，比如：tcp、udp、http</li>
+<li>逻辑运算符：与（ &amp;&amp; ）、或（ || ）、非（ ！）</li>
+</ol>
+<p>四个元素可以自由组合，比如：</p>
+<ul>
+<li>src host 192.168.31.1：抓取源IP为 192.168.31.1 的数据包</li>
+<li>tcp || udp：抓取 TCP 或者 UDP 协议的数据包</li>
+</ul>
+<h4 id="2）使用方式"><a href="#2）使用方式" class="headerlink" title="2）使用方式"></a>2）使用方式</h4><p>使用抓包过滤器时，需要先停止抓包，设置完过滤规则后，再开始抓包。</p>
+<p>停止抓包的前提下，点击工具栏的捕获按钮，点击选项。</p>
+<p><img src="/tcpdump%E5%92%8Cwireshark%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%BB%9C%E6%8E%92%E9%9A%9C/image-20221001133811867.png" srcset="/img/loading.gif" lazyload></p>
+<p>在弹出的捕获选项界面，最下方的输入框中输入过滤语句，点击开始即可抓包。</p>
+<p><img src="/tcpdump%E5%92%8Cwireshark%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%BB%9C%E6%8E%92%E9%9A%9C/image-20221001134200335.png" srcset="/img/loading.gif" lazyload></p>
+<p>提示：抓包过滤器的输入框，会自动检测语法，绿色代表语法正确，红色代表语法错误。</p>
+<h3 id="2-显示过滤器"><a href="#2-显示过滤器" class="headerlink" title="2. 显示过滤器"></a>2. 显示过滤器</h3><p>显示过滤器在抓包后或者抓包的过程中使用。</p>
+<h4 id="1）语法结构"><a href="#1）语法结构" class="headerlink" title="1）语法结构"></a>1）语法结构</h4><p>显示过滤器的语法包含5个核心元素：IP、端口、协议、比较运算符和逻辑运算符。</p>
+<ol>
+<li>IP地址：ip.addr、ip.src、ip.dst</li>
+<li>端口：tcp.port、tcp.srcport、tcp.dstport</li>
+<li>协议：tcp、udp、http</li>
+<li>比较运算符：&gt; &lt; &#x3D;&#x3D; &gt;&#x3D; &lt;&#x3D; !&#x3D;</li>
+<li>逻辑运算符：and、or、not、xor（有且仅有一个条件被满足）</li>
+</ol>
+<p>5个核心元素可以自由组合，比如：</p>
+<ul>
+<li>ip.addr &#x3D;&#x3D; 192.168.32.121：显示IP地址为 192.168.32.121 的数据包</li>
+<li>tcp.port &#x3D;&#x3D; 80 ：显示端口为 80 的数据包</li>
+</ul>
+<h4 id="2）使用方式-1"><a href="#2）使用方式-1" class="headerlink" title="2）使用方式"></a>2）使用方式</h4><p>在过滤栏输入过滤语句，修改后立即生效。</p>
+<p><img src="/tcpdump%E5%92%8Cwireshark%E5%B7%A5%E5%85%B7-%E7%BD%91%E7%BB%9C%E6%8E%92%E9%9A%9C/image-20221001134526756.png" srcset="/img/loading.gif" lazyload></p>
+<p>提示：过滤栏有自动纠错功能，绿色表示语法正确，红色表示语法错误。</p>
+<h2 id="wireshark的常见使用"><a href="#wireshark的常见使用" class="headerlink" title="wireshark的常见使用"></a>wireshark的常见使用</h2><h3 id="显示过滤器的常见使用"><a href="#显示过滤器的常见使用" class="headerlink" title="显示过滤器的常见使用"></a>显示过滤器的常见使用</h3><ul>
+<li>显示snmp或dns或icmp包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">snmp || dns || icmp<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>显示来源或目的ip地址为192.168.32.166的包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ip.add == 192.168.32.166<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>显示来源不为192.168.32.1或者目的不为192.168.32.166的包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ip.src != 192.168.32.1 or ip.dst != 192.168.32.166<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>显示来源不为192.168.32.1并且目的不为192.168.32.166的包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ip.src != 192.168.32.1 and ip.dst != 192.168.32.166<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>显示来源或目的的udp端口号为5668的包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">udp.port eq 5668<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>显示目的tcp端口号为25的包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tcp.dstport == 25<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>显示带有tcp标志的包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tcp.flags<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>显示带有tcp SYN标志的包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tcp.flags.syn eq 0x02<br></code></pre></td></tr></table></figure>
+
+<h3 id="抓包过滤器的常见使用"><a href="#抓包过滤器的常见使用" class="headerlink" title="抓包过滤器的常见使用"></a>抓包过滤器的常见使用</h3><ul>
+<li>只捕获某主机的所有流量</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">host 192.168.32.166 <span class="hljs-comment">#捕获源目主机均为192.168.32.166</span><br>src 192.168.32.166 <span class="hljs-comment">#捕获源主机均为192.168.32.166</span><br>dst 192.168.32.166 <span class="hljs-comment">#捕获目主机均为192.168.32.166</span><br>net 192.168.32.0/24 <span class="hljs-comment">#捕获网段为192.168.32.0的所有主机的所有流量</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>只捕获特定端口的流量</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">tcp portrange 8000-9000 and port 80 <span class="hljs-comment">#捕获tcp协议端口8000-900和80端口的流量</span><br>port 5060 <span class="hljs-comment">#捕获sip流量，因为sip的默认端口为5060，举一反三：port 22 #捕获的是ssh流量</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>捕获vlan的流量<ul>
+<li>捕获命令中带有vlan字段，可以捕获接口上有vlan标签的数据包，具体使用方法：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vlan and (host 192.168.32.166 and port 80) <span class="hljs-comment">#捕获vlan中主机192.168.32.166，前提是有vlan，在WiFi中不一定可以捕获到相应的流量，局域网（二层环境中vlan标签很常见）</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>只(不)捕获arp流量</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">host 192.168.32.166 and arp <span class="hljs-comment"># 只捕获主机为192.168.32.166的arp流量</span><br>host 192.168.32.166 and !arp <span class="hljs-comment"># 只捕获除主机为192.168.32.166以外流量中的arp流量</span><br>arp <span class="hljs-comment">#捕获接口中的所有arp请求</span><br>!arp  <span class="hljs-comment">#捕获接口中的所有非arp请求</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>只捕获某主机的dns流量</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">host 192.168.32.166 and port 53 <span class="hljs-comment"># 只捕获主机为192.168.32.166的dns流量</span><br>src 192.168.32.166 and port 53 <span class="hljs-comment"># 只捕获主机192.168.32.166对外的dns流量</span><br>dst 192.168.32.166 and port 53 <span class="hljs-comment"># 只捕获主机192.168.32.166的dns流量</span><br>port 53 <span class="hljs-comment"># 捕获接口中的所有主机的dns流量</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>只(不)捕获某主机的http流量</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">host 192.168.32.166 and port 80 and http <span class="hljs-comment"># 只捕获主机为192.168.32.166的http流量，注意如果http端口为8080，需要将80改为8080</span><br>port 80 and http <span class="hljs-comment"># 捕获所有经过该接口的http流量，同样如果http端口为8080，需要将80改为8080</span><br>not port 80 <span class="hljs-comment"># 捕获除http以外的所有流量，同样如果http端口为8080，需要将80改为8080</span><br>not port 80 and http <span class="hljs-comment"># 捕获除http以外的所有流量，同样如果http端口为8080，需要将80改为8080</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="wireshark使用时的注意事项"><a href="#wireshark使用时的注意事项" class="headerlink" title="wireshark使用时的注意事项"></a>wireshark使用时的注意事项</h2><p>局域网的所有流量都会发送给我们的电脑，默认情况下，我们的电脑只会对自己mac的流量进行解包，而丢弃其他mac的数据包。<br>开启混杂模式后，我们就可以解析其他mac的数据包，因此，我们使用Wireshark时，通常都会开启混杂模式。</p>
+<p>点击菜单栏的「捕获」按钮，点击「选项」，勾选「在所有接口上使用混杂模式」。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%B7%A5%E5%85%B7/" class="category-chain-item">工具</a>
+  
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%BD%91%E7%BB%9C/" class="category-chain-item">网络</a>
+  
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%B7%A5%E5%85%B7/">#工具</a>
+      
+        <a href="/tags/tcpdump/">#tcpdump</a>
+      
+        <a href="/tags/wireshark/">#wireshark</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>tcpdump和wireshark工具(网络排障)</div>
+      <div>https://dkl-justdoit.github.io/p/711414cc.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>dkl-justdoit</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年10月1日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2024年2月1日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/p/dcbbdee8.html" title="Git 远程删除分支后，本地 git branch -a 依然能看到的解决办法">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Git 远程删除分支后，本地 git branch -a 依然能看到的解决办法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/p/83eb35.html" title="hexo new 之后自动使用Typora打开MD源文件">
+                        <span class="hidden-mobile">hexo new 之后自动使用Typora打开MD源文件</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/assets/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/jingtaisidai.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/yinghua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxingxing.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/daxuehua.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
