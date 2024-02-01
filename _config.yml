@@ -13,7 +13,12 @@ timezone: 'Asia/shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://dkl-justdoit.github.io
+
+# 下面这个是默认的github提供的url
+# url: https://dkl-justdoit.github.io
+# 如果你自己购买域名了，就可以使用你自己自定义的域名
+url: https://blog.lunyushuo.top
+
 # permalink: :year/:month/:day/:title/
 
 # 下面四行是安装插件后自行添加的

@@ -1,54 +1,3 @@
-hexo g
-hexo s
-git clone -b hexo-source git@github.com:dkl-justdoit/dkl-justdoit.github.io.git
-git clone -b hexo-source git@github.com:dkl-justdoit/dkl-justdoit.github.io.git
-cd
-pwd
-subl .
-hexo clean
-hexo g
-hexo d
-git remote -v
-git branch -v
-git branch hexo-source-second
-ll
-git branch hexo-source-second
-git branch hexo-source-second
-git status
-git add .
-git branch -v
-git branch hexo-source-second
-git commit -m '这是我博客的第二种结构'
-git branch hexo-source-second
-git branch -v
-git remote -v
-git checkout hexo-source-second 
-git add ..
-git add .
-git commit -m '这是我博客的第二种结构'
-git push -u ssh_origin hexo-source-second 
-cd
-pwd
-subl 。
-subl .
-hexo clean
-hexo g
-hexo d
-hexo clean
-hexo g
-hexo d
-hexo new 'ceshi'
-hexo clean
-hexo g
-hexo d
-npm root -g
-hexo init
-hexo init
-git clone
-git clone git@github.com:qixa/hexo-theme-fluid-mod.git
-subl .
-cd
-pwd
 ll
 cd
 owd
@@ -498,3 +447,54 @@ hexo new 'ceshiyixia'
 npm --list
 hexo new 'ceshiyixia'
 hexo 
+hexo 
+pwd
+npm install
+hexo
+ls
+git submodule update --init --recursive
+git branch 
+hexo clean
+hexo new 'ceshiyixia'
+hexo clean
+hexo g
+subl .
+hexo g
+hexo clean
+hexo g
+npm ls --depth 0
+hexo new 'ceshiyixia-2'
+hexo clean
+hexo g
+hexo new 'ceshi3'
+hexo clean
+hexo g
+hexo new 'ceshi45'
+hexo clean
+hexo g
+hexo
+hexo clean
+hexo new 'ceshi222'
+hexo clean
+hexo g
+hexo clean
+hexo g
+hexo new '我胡汉三又回来啦！哈哈哈哈啊哈哈哈'
+hexo clean
+hexo g
+hexo s
+hexo d
+cd
+pwd
+git add .
+git commit -m '提交:我胡汉三又回来啦！哈哈哈哈啊哈哈哈'
+git remote -v
+git push ssh_origin hexo-source-third 
+hexo new 'aapanel国际版安装教程'
+hexo clean
+hexo g
+hexo d
+git add .
+git commit -m '提交:aapanel国际版安装教程'
+git push ssh_origin hexo-source-third 
+history 
