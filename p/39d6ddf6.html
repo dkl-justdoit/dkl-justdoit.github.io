@@ -315,7 +315,7 @@
               <div class="markdown-body">
                 
                 <h1 id="git-push-ssh-origin-hexo-source-报错：ERROR-we’re-doing-an-SSH-key-audit-的解决办法"><a href="#git-push-ssh-origin-hexo-source-报错：ERROR-we’re-doing-an-SSH-key-audit-的解决办法" class="headerlink" title="git push ssh_origin hexo-source 报错：ERROR: we’re doing an SSH key audit.的解决办法"></a>git push ssh_origin hexo-source 报错：ERROR: we’re doing an SSH key audit.的解决办法</h1><p>由于Git Bash是命令行交互，所以在出现报错后的回显信息很重要。好多时候，解决方案就在回显信息中。如题，这个报错的解决方案就在回显信息中，如下图所示：</p>
-<p><img src="/Git%E4%B8%ADSSH%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/%E8%BF%99%E4%B8%AA%E9%94%99%E8%AF%AF%E5%8F%AA%E9%9C%80%E8%A6%81%E6%8F%90%E4%B8%AA%E6%9D%83%E9%99%90%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%BB%A7%E7%BB%AD%E4%BD%BF%E7%94%A8%E4%BA%86.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/p/39d6ddf6/%E8%BF%99%E4%B8%AA%E9%94%99%E8%AF%AF%E5%8F%AA%E9%9C%80%E8%A6%81%E6%8F%90%E4%B8%AA%E6%9D%83%E9%99%90%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%BB%A7%E7%BB%AD%E4%BD%BF%E7%94%A8%E4%BA%86.png" srcset="/img/loading.gif" lazyload></p>
 <p>所以这个只需要访问<code>https://github.com/settings/keys/*****</code>进行提权即可解决。出现这个问题的原因是因为修改GitHub远程仓库的默认分支，导致SSH_key权限出现了问题。当然这个问题很容易就能解决，不过我们关注的不应该仅仅是报错本身，更应该关注解决问题的方法和思路。</p>
 
                 
