@@ -611,6 +611,17 @@
   
   
   <entry>
+    <title>categories</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>留言板</title>
     <link href="/"/>
     <url>/</url>
@@ -623,17 +634,6 @@
   
   <entry>
     <title>tags</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>categories</title>
     <link href="/"/>
     <url>/</url>
     
