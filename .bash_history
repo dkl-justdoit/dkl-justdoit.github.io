@@ -1,19 +1,3 @@
-cd ..
-cd ..
-pwd
-hexo clean
-hexo g
-hexo s
-hexo new 'ceshi'
-hexo clean
-hexo g
-hexo s
-hexo d
-hexo new '测试'
-npm root -g
-npm install hexo-renderer-marked --save
-hexo new 'zaiceshi'
-hexo clean
 hexo g
 hexo s
 git clone -b hexo-source git@github.com:dkl-justdoit/dkl-justdoit.github.io.git
@@ -498,3 +482,19 @@ hexo d
 hexo clean
 hexo g
 hexo d
+git init
+git remote add ssh_origin git@github.com:dkl-justdoit/dkl-justdoit.github.io.git
+git remote -v
+git fetch ssh_origin hexo-source-third
+git fetch ssh_origin hexo-source-third
+git fetch ssh_origin hexo-source-third
+git checkout -b hexo-source-third ssh_origin/hexo-source-third
+git checkout -b hexo-source-third ssh_origin/hexo-source-third
+git pull ssh_origin hexo-source-third
+git pull ssh_origin hexo-source-third
+git pull ssh_origin hexo-source-third
+ls
+hexo new 'ceshiyixia'
+npm --list
+hexo new 'ceshiyixia'
+hexo 
