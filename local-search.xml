@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>twikoo评论插件暂时不弄了，反正就是做个笔记而已，有时间再说</title>
+    <link href="/p/1941998.html"/>
+    <url>/p/1941998.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="搞得心态有点崩了，云部署都没有问题，但是envId填充到本地配置中，网页中并未出现评论插件"><a href="#搞得心态有点崩了，云部署都没有问题，但是envId填充到本地配置中，网页中并未出现评论插件" class="headerlink" title="搞得心态有点崩了，云部署都没有问题，但是envId填充到本地配置中，网页中并未出现评论插件"></a>搞得心态有点崩了，云部署都没有问题，但是envId填充到本地配置中，网页中并未出现评论插件</h1><p>大概率是因为之前那次主题下载后被修改了，而nodejs和npm又更新了，还有就是之前删了一些东西。忘记删啥了。不过没事，核心需求没问题就是，反正就是做个笔记，省的弄完就忘了。</p><p>今天就这样吧！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+      <category>网络</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>网络</tag>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>aapanel国际版安装教程</title>
     <link href="/p/3d026f4b.html"/>
     <url>/p/3d026f4b.html</url>
@@ -622,22 +651,22 @@
   
   
   <entry>
-    <title></title>
+    <title>留言板</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2022/06/18 13:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    <content type="html"><![CDATA[<p>欢迎留言，请留下邮箱方便我回复您！</p>]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>留言板</title>
+    <title></title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<p>欢迎留言，请留下邮箱方便我回复您！</p>]]></content>
+    <content type="html"><![CDATA[!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2022/06/18 13:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
     
   </entry>
   

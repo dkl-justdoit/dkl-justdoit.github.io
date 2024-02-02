@@ -6,7 +6,7 @@
   <link href="https://blog.lunyushuo.top/atom.xml" rel="self"/>
   
   <link href="https://blog.lunyushuo.top/"/>
-  <updated>2024-02-01T15:53:12.773Z</updated>
+  <updated>2024-02-02T15:05:16.251Z</updated>
   <id>https://blog.lunyushuo.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>twikoo评论插件暂时不弄了，反正就是做个笔记而已，有时间再说</title>
+    <link href="https://blog.lunyushuo.top/p/1941998.html"/>
+    <id>https://blog.lunyushuo.top/p/1941998.html</id>
+    <published>2024-02-02T15:01:23.000Z</published>
+    <updated>2024-02-02T15:05:16.251Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;搞得心态有点崩了，云部署都没有问题，但是envId填充到本地配置中，网页中并未出现评论插件&quot;&gt;&lt;a href=&quot;#搞得心态有点崩了，云部署都没有问题，但是envId填充到本地配置中，网页中并未出现评论插件&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://blog.lunyushuo.top/categories/Linux/"/>
+    
+    <category term="网络" scheme="https://blog.lunyushuo.top/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="网络" scheme="https://blog.lunyushuo.top/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="Linux" scheme="https://blog.lunyushuo.top/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>aapanel国际版安装教程</title>
@@ -545,33 +574,6 @@
     <category term="Git" scheme="https://blog.lunyushuo.top/tags/Git/"/>
     
     <category term="工具" scheme="https://blog.lunyushuo.top/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git中submodule子模块的简单使用</title>
-    <link href="https://blog.lunyushuo.top/p/c697b138.html"/>
-    <id>https://blog.lunyushuo.top/p/c697b138.html</id>
-    <published>2022-07-11T09:20:18.000Z</published>
-    <updated>2024-02-01T14:19:09.677Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;git中submodule子模块的简单使用&quot;&gt;&lt;a href=&quot;#git中submodule子模块的简单使用&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="工具" scheme="https://blog.lunyushuo.top/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Git" scheme="https://blog.lunyushuo.top/tags/Git/"/>
-    
-    <category term="submodule" scheme="https://blog.lunyushuo.top/tags/submodule/"/>
     
   </entry>
   
