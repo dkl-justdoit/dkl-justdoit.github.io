@@ -1,25 +1,3 @@
-ll
-cd
-owd
-pwd
-npm root -g
-hexo new 'VMware workstation pro 17安装教程'
-hexo clean
-subl .
-hexo clean
-hexo g
-hexo d
-ll
-ll source/_posts/
-hexo clean 
-hexo g
-hexo d
-cd
-pwd
-subl .
-hexo clean
-hexo g
-cd
 pwd
 hexo clean
 hexo g
@@ -498,3 +476,25 @@ git add .
 git commit -m '提交:aapanel国际版安装教程'
 git push ssh_origin hexo-source-third 
 history 
+cd
+hexo clean
+hexo g
+subl 
+hexo d
+git status
+git status
+hexo clean
+hexo g
+hexo d
+history 
+npm ls --depth 0
+hexo clean
+hexo g
+hexo d
+git add .
+history 
+git commit -m '提交:修复网页图片显示问题'
+git push ssh_origin hexo-source-third 
+cd
+pwd
+git clone https://github.com/dkl-justdoit/hexo-theme-fluid.git

@@ -3,7 +3,7 @@ layout: "about"
 title: about
 date: 2022-07-02 21:23:29
 banner_img: 
-comment: 'twikoo'
+comment: twikoo
 ---
 
 ## 自我介绍
