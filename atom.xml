@@ -6,7 +6,7 @@
   <link href="https://blog.lunyushuo.top/atom.xml" rel="self"/>
   
   <link href="https://blog.lunyushuo.top/"/>
-  <updated>2024-02-02T15:05:16.251Z</updated>
+  <updated>2024-03-31T10:10:22.014Z</updated>
   <id>https://blog.lunyushuo.top/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Cisco-Ruijie-Huawei-H3C-Note-startup</title>
+    <link href="https://blog.lunyushuo.top/p/f93ff5db.html"/>
+    <id>https://blog.lunyushuo.top/p/f93ff5db.html</id>
+    <published>2024-03-31T10:05:47.000Z</published>
+    <updated>2024-03-31T10:10:22.014Z</updated>
+    
+    
+    <summary type="html">Cisco/Ruijie/Huawei/H3c网络笔记启动</summary>
+    
+    
+    
+    <category term="Linux" scheme="https://blog.lunyushuo.top/categories/Linux/"/>
+    
+    <category term="网络" scheme="https://blog.lunyushuo.top/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="网络" scheme="https://blog.lunyushuo.top/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="Linux" scheme="https://blog.lunyushuo.top/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>twikoo评论插件暂时不弄了，反正就是做个笔记而已，有时间再说</title>
     <link href="https://blog.lunyushuo.top/p/1941998.html"/>
     <id>https://blog.lunyushuo.top/p/1941998.html</id>
     <published>2024-02-02T15:01:23.000Z</published>
-    <updated>2024-02-02T15:05:16.251Z</updated>
+    <updated>2024-02-02T15:05:32.660Z</updated>
     
     
       
@@ -338,11 +361,11 @@
     
     <category term="Git" scheme="https://blog.lunyushuo.top/tags/Git/"/>
     
+    <category term="Typora" scheme="https://blog.lunyushuo.top/tags/Typora/"/>
+    
     <category term="VSCode" scheme="https://blog.lunyushuo.top/tags/VSCode/"/>
     
     <category term="Sublime Text" scheme="https://blog.lunyushuo.top/tags/Sublime-Text/"/>
-    
-    <category term="Typora" scheme="https://blog.lunyushuo.top/tags/Typora/"/>
     
     <category term="博客搭建" scheme="https://blog.lunyushuo.top/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
@@ -373,11 +396,11 @@
     <category term="文本编辑器" scheme="https://blog.lunyushuo.top/categories/%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/"/>
     
     
+    <category term="Typora" scheme="https://blog.lunyushuo.top/tags/Typora/"/>
+    
     <category term="VSCode" scheme="https://blog.lunyushuo.top/tags/VSCode/"/>
     
     <category term="Sublime Text" scheme="https://blog.lunyushuo.top/tags/Sublime-Text/"/>
-    
-    <category term="Typora" scheme="https://blog.lunyushuo.top/tags/Typora/"/>
     
   </entry>
   
@@ -507,9 +530,9 @@
     
     
     
-    <category term="工具" scheme="https://blog.lunyushuo.top/categories/%E5%B7%A5%E5%85%B7/"/>
-    
     <category term="Linux" scheme="https://blog.lunyushuo.top/categories/Linux/"/>
+    
+    <category term="工具" scheme="https://blog.lunyushuo.top/categories/%E5%B7%A5%E5%85%B7/"/>
     
     <category term="网络" scheme="https://blog.lunyushuo.top/categories/%E7%BD%91%E7%BB%9C/"/>
     
@@ -543,37 +566,9 @@
     <category term="工具" scheme="https://blog.lunyushuo.top/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="Typora" scheme="https://blog.lunyushuo.top/tags/Typora/"/>
-    
     <category term="js" scheme="https://blog.lunyushuo.top/tags/js/"/>
     
-  </entry>
-  
-  <entry>
-    <title>修改Git的默认家目录</title>
-    <link href="https://blog.lunyushuo.top/p/3c94ef76.html"/>
-    <id>https://blog.lunyushuo.top/p/3c94ef76.html</id>
-    <published>2022-08-22T11:10:38.000Z</published>
-    <updated>2024-02-01T14:19:09.782Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;修改Git的默认家目录&quot;&gt;&lt;a href=&quot;#修改Git的默认家目录&quot; class=&quot;headerlink&quot; title=&quot;修改Git的默认家目录&quot;&gt;&lt;/a&gt;修改Git的默认家目录&lt;/h1&gt;&lt;p&gt;前提条件：Git已经安装&lt;/p&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="工具" scheme="https://blog.lunyushuo.top/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Git" scheme="https://blog.lunyushuo.top/tags/Git/"/>
-    
-    <category term="工具" scheme="https://blog.lunyushuo.top/tags/%E5%B7%A5%E5%85%B7/"/>
+    <category term="Typora" scheme="https://blog.lunyushuo.top/tags/Typora/"/>
     
   </entry>
   
