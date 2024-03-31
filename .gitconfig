@@ -6,3 +6,5 @@
 [credential]
 	helper = store
 
+[safe]
+	directory = D:/dkl-justdoit.github.io

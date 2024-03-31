@@ -1,27 +1,3 @@
-pwd
-hexo clean
-hexo g
-hexo d
-hexo clean
-hexo g
-hexo d
-hexo clean
-hexo g
-hexo d
-hexo new page "categories"
-hexo new page "tags"
-hexo clena
-hexo clean
-hexo g
-hexo d
-cd
-hexo new cesh
-hexo clean
-hexo g
-hexo s
-hexo clean
-hexo g
-hexo d
 cd
 hexo new 'VMware Workstation Pro各版本激活许可证'
 hexo new 'vmware 6 虚拟化 全系列 序列号'
@@ -498,3 +474,27 @@ git push ssh_origin hexo-source-third
 cd
 pwd
 git clone https://github.com/dkl-justdoit/hexo-theme-fluid.git
+cd
+pwd
+ls
+git config --global --list
+ll
+ls -la
+vim .gitconfig 
+git remote -v
+ssh -T git@github.com
+pwd
+subl .
+git config --global core.editor "sublime_text.exe -w"
+subl .
+git config --global core.editor "Typora.exe"
+typora .
+code .
+subl .
+cd
+subl .
+git remote -v
+git branch -v
+git config --global --list
+typora .
+TYPORA .
