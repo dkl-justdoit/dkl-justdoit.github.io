@@ -521,9 +521,9 @@
     
     <categories>
       
-      <category>Linux</category>
-      
       <category>工具</category>
+      
+      <category>Linux</category>
       
       <category>网络</category>
       
@@ -680,22 +680,22 @@
   
   
   <entry>
-    <title>tags</title>
+    <title>留言板</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<p>欢迎留言，请留下邮箱方便我回复您！</p>]]></content>
     
   </entry>
   
   
   
   <entry>
-    <title>留言板</title>
+    <title>tags</title>
     <link href="/"/>
     <url>/</url>
     
-    <content type="html"><![CDATA[<p>欢迎留言，请留下邮箱方便我回复您！</p>]]></content>
+    <content type="html"><![CDATA[]]></content>
     
   </entry>
   
