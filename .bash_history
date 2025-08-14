@@ -1,83 +1,3 @@
-cd
-hexo new 'VMware Workstation Pro各版本激活许可证'
-hexo new 'vmware 6 虚拟化 全系列 序列号'
-hexo new 'vmware 6 虚拟化 全系列 激活许可证'
-hexo clena
-hexo clean
-hexo g
-hexo d
-cd
-subl .
-hexo clean
-hexo g
-hexo d
-hexo clean
-cd 
-npm root -g
-hexo clean
-hexo g
-hexo d
-hexo clean
-cd
-hexo clean
-hexo g
-hexo d
-git add .
-git commit -m '提交：VMware Workstation Pro各版本激活许可证'
-git push ssh_origin hexo-source-second 
-git remote 
-git branch 
-cd
-subl .
-hexo new 'PPPoE'
-hexo new 'DHCP'
-hexo new 'ARP与RARP'
-hexo new page 'remark'
-hexo clean
-hexo g
-hexo g
-hexo d
-git add .
-git commit -m '提交：网络笔记'
-git push ssh_origin hexo-source-second 
-subl .
-hexo
-hexo clean
-hexo g
-hexo d
-hexo clean
-hexo g
-hexo d
-hexo clean
-hexo g
-hexo d
-hexo clean
-hexo g
-hexo d
-hexo clean
-hexo g
-hexo
-hexo d
-hexo
-hexo clena
-hexo clean
-hexo g
-hexo d
-hexo clean
-hexo g
-hexo d
-hexo clean
-hexo g
-hexo d
-hexo clean
-hexo g
-hexo d
-hexo clean
-hexo g
-hexo dj
-hexo d
-hexo clean
-hexo g
 hexo d
 hexo clean
 hexo g
@@ -498,3 +418,83 @@ git branch -v
 git config --global --list
 typora .
 TYPORA .
+cd
+pwd
+typora .
+git remote -v
+git config --global --add safe.directory D:/dkl-justdoit.github.io
+git remote -v
+subl .
+hexo clean
+hexo clean
+hexo g
+hexo 
+hexo s
+hexo s
+hexo clean
+hexo g
+hexo s
+git branch -v
+hexo new 'Cisco-Ruijie-Huawei-H3C-Note-startup'
+git add ..
+git add .
+git commit -m "提交：Cisco-Ruijie-Huawei-H3C-Note-startup.md"
+git push ssh_origin hexo-source-third 
+hexo clean
+hexo g
+hexo clean
+hexo g
+hexo d
+git config --global --add safe.directory D:/dkl-justdoit.github.io/.deploy_git
+hexo d
+pwd
+cd
+git add ..
+git add .
+git git@github.com:AlexAkulov/putty-color-themes.git
+git clone git@github.com:AlexAkulov/putty-color-themes.git
+cd
+git branch 
+ssh-keygen -t ed25519 -C "vaincourtship@gmail.com"
+git clone https://github.com/TheNetworkBerg/ecceman-affinity-EVE-NG-Symbols.git
+git clone https://github.com/ecceman/affinity.git
+cd
+pwd
+git http://pygitlab.qytang.com/root/cisco_viptela_2021.git
+git clone http://pygitlab.qytang.com/root/cisco_viptela_2021.git
+cd
+pwd
+ls
+git config --global --list
+cd
+pwd
+ll
+ll -a
+vim .gitconfig 
+git remote -v
+ssh -T git@github.com
+ls ~/.ssh/id_*.pub
+cat ~/.ssh/config 
+ll
+ll -la
+cat ~/.ssh/
+cd ~/.ssh/
+ls
+cat my_github_ed25519
+ssh -vT git@github.com
+cat /d/dkl-justdoit.github.io/.ssh/my_github_ed25519.pub
+ssh -vT git@github.com
+ssh -T git@github.com
+ssh -T git@github.com
+git branch -v
+git status s
+git status 
+npm root -g
+pwd
+cd
+git config --global core.editor "sublime_text.exe -w|1
+git config --global core.editor "sublime_text.exe -w|1"
+git config --global --list
+subl .
+hexo
+pwd

@@ -1,5 +1,5 @@
 [core]
-	editor = Typora.exe
+	editor = sublime_text.exe -w|1
 [user]
 	name = dkl-justdoit
 	email = vaincourtship@gmail.com
@@ -8,3 +8,4 @@
 
 [safe]
 	directory = D:/dkl-justdoit.github.io
+	directory = D:/dkl-justdoit.github.io/.deploy_git

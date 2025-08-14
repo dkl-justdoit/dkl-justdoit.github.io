@@ -12,7 +12,7 @@
 ~h
 # Command Line History (newest to oldest):
 :q
-|2,0,1711876686,,"q"
+|2,0,1754212480,,"q"
 :wq
 |2,0,1669800920,,"wq"
 
@@ -28,11 +28,17 @@
 
 # File marks:
 '0  8  0  ~/.gitconfig
-|4,48,8,0,1711876686,"~/.gitconfig"
+|4,48,8,0,1754212480,"~/.gitconfig"
 '1  8  0  ~/.gitconfig
-|4,49,8,0,1669800920,"~/.gitconfig"
+|4,49,8,0,1711876686,"~/.gitconfig"
+'2  8  0  ~/.gitconfig
+|4,50,8,0,1669800920,"~/.gitconfig"
+'3  8  0  ~/.gitconfig
+|4,51,8,0,1669800920,"~/.gitconfig"
 
 # Jumplist (newest first):
+-'  8  0  ~/.gitconfig
+|4,39,8,0,1754212480,"~/.gitconfig"
 -'  8  0  ~/.gitconfig
 |4,39,8,0,1711876686,"~/.gitconfig"
 -'  8  0  ~/.gitconfig
@@ -41,11 +47,13 @@
 |4,39,1,0,1669800898,"~/.gitconfig"
 -'  1  0  ~/.gitconfig
 |4,39,1,0,1669800898,"~/.gitconfig"
+-'  1  0  ~/.gitconfig
+|4,39,1,0,1669800898,"~/.gitconfig"
 
 # History of marks within files (newest to oldest):
 
 > ~/.gitconfig
-	*	1711876624	0
+	*	1754212453	0
 	"	8	0
 	^	8	0
 	.	8	0
