@@ -669,17 +669,6 @@
   
   
   <entry>
-    <title>留言板</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<p>欢迎留言，请留下邮箱方便我回复您！</p>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>categories</title>
     <link href="/"/>
     <url>/</url>
@@ -696,6 +685,17 @@
     <url>/</url>
     
     <content type="html"><![CDATA[]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>留言板</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<p>欢迎留言，请留下邮箱方便我回复您！</p>]]></content>
     
   </entry>
   
