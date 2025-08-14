@@ -356,11 +356,11 @@
       
       <tag>Git</tag>
       
-      <tag>Typora</tag>
-      
       <tag>VSCode</tag>
       
       <tag>Sublime Text</tag>
+      
+      <tag>Typora</tag>
       
       <tag>博客搭建</tag>
       
@@ -391,11 +391,11 @@
     
     <tags>
       
-      <tag>Typora</tag>
-      
       <tag>VSCode</tag>
       
       <tag>Sublime Text</tag>
+      
+      <tag>Typora</tag>
       
     </tags>
     
@@ -561,9 +561,9 @@
     
     <tags>
       
-      <tag>js</tag>
-      
       <tag>Typora</tag>
+      
+      <tag>js</tag>
       
     </tags>
     
@@ -658,6 +658,17 @@
   
   
   <entry>
+    <title>categories</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>about</title>
     <link href="/"/>
     <url>/</url>
@@ -669,7 +680,7 @@
   
   
   <entry>
-    <title>categories</title>
+    <title>tags</title>
     <link href="/"/>
     <url>/</url>
     
@@ -685,17 +696,6 @@
     <url>/</url>
     
     <content type="html"><![CDATA[<p>欢迎留言，请留下邮箱方便我回复您！</p>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>tags</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[]]></content>
     
   </entry>
   
