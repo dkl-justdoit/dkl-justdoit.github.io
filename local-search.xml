@@ -658,33 +658,11 @@
   
   
   <entry>
-    <title>categories</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>about</title>
     <link href="/"/>
     <url>/</url>
     
     <content type="html"><![CDATA[<h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>我就是我，不一样的烟火！！</p><p>你可以在这里阅读我的生活&#x3D;&#x3D;&gt;<a href="https://dkl-justdoit.github.io/">vaincourtship</a></p><p>我觉着学习的过程就是一个持续不断的一直问为什么的过程，当你一直问一直问，到最后你可能就会发现你已经深入到了一定的程度，并且对于知识的理解有了属于你自己的全新的见解与认识。</p>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>tags</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[]]></content>
     
   </entry>
   
@@ -702,11 +680,33 @@
   
   
   <entry>
+    <title>categories</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title></title>
     <link href="/"/>
     <url>/</url>
     
     <content type="html"><![CDATA[!(function() {  /** 计时起始时间，自行修改 **/  var start = new Date("2022/06/18 13:00:00");  function update() {    var now = new Date();    now.setTime(now.getTime()+250);    days = (now - start) / 1000 / 60 / 60 / 24;    dnum = Math.floor(days);    hours = (now - start) / 1000 / 60 / 60 - (24 * dnum);    hnum = Math.floor(hours);    if(String(hnum).length === 1 ){      hnum = "0" + hnum;    }    minutes = (now - start) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);    mnum = Math.floor(minutes);    if(String(mnum).length === 1 ){      mnum = "0" + mnum;    }    seconds = (now - start) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);    snum = Math.round(seconds);    if(String(snum).length === 1 ){      snum = "0" + snum;    }    document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天";    document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";  }  update();  setInterval(update, 1000);})();]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>tags</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[]]></content>
     
   </entry>
   
